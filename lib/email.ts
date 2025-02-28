@@ -14,11 +14,11 @@ export async function sendVerificationEmail(email: string, token: string) {
   const verificationLink = `${process.env.NEXT_PUBLIC_APP_URL}/verify-email?token=${token}`
 
   const mailOptions = {
-    from: `"Webstoryboy" <${process.env.EMAIL_USER}>`,
+    from: `"webstoryboy.com" <${process.env.EMAIL_USER}>`,
     to: email,
     subject: '이메일 인증을 완료하세요',
     html: `
-      <p>안녕하세요,</p>
+      <p>안녕하세요. 웹스토리보이입니다.</p>
       <p>아래 링크를 클릭하여 이메일 인증을 완료해주세요:</p>
       <a href="${verificationLink}" target="_blank">${verificationLink}</a>
       <p>감사합니다!</p>

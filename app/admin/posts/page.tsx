@@ -51,6 +51,7 @@ export default async function AdminPostPage(props: {
             <TableHead>번호</TableHead>
             <TableHead>타이틀</TableHead>
             <TableHead>카테고리</TableHead>
+            <TableHead>서브카테고리</TableHead>
             <TableHead>발행</TableHead>
             <TableHead>날짜</TableHead>
             <TableHead className='w-[100px]'>수정</TableHead>
@@ -71,6 +72,7 @@ export default async function AdminPostPage(props: {
                 </TableCell>
                 <TableCell>{post.title}</TableCell>
                 <TableCell>{post.category}</TableCell>
+                <TableCell>{post.subCategory}</TableCell>
                 <TableCell>{post.isPublished ? '공개' : '비공개'}</TableCell>
                 <TableCell>{formatDate(post.createdAt)}</TableCell>
                 <TableCell className='text-right flex justify-end gap-1'>

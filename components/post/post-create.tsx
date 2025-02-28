@@ -28,17 +28,18 @@ import {
 const postDefaultValues: IPostInput =
   process.env.NODE_ENV === 'development'
     ? {
-        title: '웹디자인개발기능사 레이아웃 유형(A-1)',
-        slug: 'webdesign2025 A1',
-        category: '',
-        subCategory: '',
-        components: '',
-        description: '',
+        title: '웹디자인개발기능사 레이아웃 유형(A-3)',
+        slug: 'webdesign2025-A3',
+        category: 'lecture',
+        subCategory: 'webdesign2025',
+        components: 'webdesign03',
+        description: '웹디자인개발기능사 레이아웃 유형(A-3) 강의입니다.',
+        contents: '',
         isPublished: true,
-        author: '',
-        images: '',
+        author: '웹스토리보이',
+        images: 'webdesign03.jpg',
         youtubeId: '',
-        tags: [],
+        tags: ['레이아웃', 'A유형'],
         reviews: [],
         numReviews: 0,
         numViews: 0,
@@ -51,6 +52,7 @@ const postDefaultValues: IPostInput =
         subCategory: '',
         components: '',
         description: '',
+        contents: '',
         isPublished: true,
         author: '',
         images: '',
@@ -103,6 +105,7 @@ export default function PostCreate() {
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name='slug'
@@ -110,13 +113,29 @@ export default function PostCreate() {
               <FormItem className='w-full relative'>
                 <FormLabel>
                   슬러그 *
-                  <PostTooltip text='슬러그는 페이지 영문 주소를 나타냅니다.' />
+                  <PostTooltip text='슬러그는 페이지 영문 주소를 나타냅니다. 빈칸이 있으면 안됩니다.' />
                 </FormLabel>
                 <FormControl>
                   <Input
                     placeholder='영문 페이지 주소를 적어주세요!'
                     {...field}
                   />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className='flex flex-col gap-5 md:flex-row'>
+          <FormField
+            control={form.control}
+            name='description'
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <FormLabel>설명 *</FormLabel>
+                <FormControl>
+                  <Input placeholder='설명을 적어주세요!' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -184,6 +203,20 @@ export default function PostCreate() {
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name='images'
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <FormLabel>이미지</FormLabel>
+                <FormControl>
+                  <Input placeholder='이미지 이름을 작성하세요!' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
 
         <div className='flex flex-col gap-5 md:flex-row'>
@@ -203,15 +236,15 @@ export default function PostCreate() {
         </div>
 
         <div className='relative'>
-          <Tabs defaultValue='description' className='w-full'>
+          <Tabs defaultValue='contents' className='w-full'>
             <TabsList>
-              <TabsTrigger value='description'>설명</TabsTrigger>
+              <TabsTrigger value='contents'>내용</TabsTrigger>
               <TabsTrigger value='components'>컴퍼넌트</TabsTrigger>
             </TabsList>
-            <TabsContent value='description'>
+            <TabsContent value='contents'>
               <FormField
                 control={form.control}
-                name='description'
+                name='contents'
                 render={({ field }) => (
                   <FormItem className='w-full'>
                     <FormControl>
@@ -222,9 +255,7 @@ export default function PostCreate() {
                         renderHTML={(text) => (
                           <ReactMarkdown>{text}</ReactMarkdown>
                         )}
-                        onChange={({ text }) =>
-                          form.setValue('description', text)
-                        }
+                        onChange={({ text }) => form.setValue('contents', text)}
                       />
                     </FormControl>
                     <FormMessage />

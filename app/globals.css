@@ -188,6 +188,34 @@
     @apply max-w-6xl mx-auto p-4 mt-20;
   }
 
+  /* page */
+  .page__title > h2 {
+    @apply text-2xl md:text-3xl font-nexon mb-2;
+  }
+  .page__title > p {
+    @apply text-zinc-500 mb-2 leading-6 text-sm break-keep;
+  }
+
+  /* cards */
+  .page__card {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6 border-b pb-8 border-b-zinc-200;
+  }
+  .card__images {
+    @apply relative block;
+  }
+  .card__images > img {
+    @apply rounded-md transition-all duration-500 ease-in-out;
+  }
+  .card__images > .link {
+    @apply absolute inset-0 flex gap-1 items-center justify-center opacity-0 transition-opacity duration-300;
+  }
+  .card__images > .link a {
+    @apply bg-black p-2 rounded-full cursor-pointer hover:bg-zinc-800;
+  }
+  .card__images > .link a svg {
+    @apply h-4 w-4 text-white;
+  }
+
   /* common */
   .circle {
     @apply w-9 h-9 bg-background rounded-full items-center justify-center border ring ring-gray-300/20 hover:ring-gray-300/60 flex cursor-pointer;
@@ -210,6 +238,15 @@
   }
   .tooltip {
     @apply w-4 h-4 select-none absolute right-0 top-2 text-zinc-400 hover:text-zinc-800 transition-all duration-500;
+  }
+  .small {
+    @apply text-zinc-500 text-[10px] pl-1;
+  }
+  .likes {
+    @apply bg-red-500 rounded-md text-xs text-white px-1 flex items-center justify-center;
+  }
+  .noData {
+    @apply col-span-3 border-t py-40 text-center text-red-600;
   }
 }
 

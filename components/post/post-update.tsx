@@ -73,6 +73,7 @@ export default function PostUpdate({
               </FormItem>
             )}
           />
+
           <FormField
             control={form.control}
             name='slug'
@@ -87,6 +88,22 @@ export default function PostUpdate({
                     placeholder='영문 페이지 주소를 적어주세요!'
                     {...field}
                   />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+
+        <div className='flex flex-col gap-5 md:flex-row'>
+          <FormField
+            control={form.control}
+            name='description'
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <FormLabel>설명 *</FormLabel>
+                <FormControl>
+                  <Input placeholder='설명을 적어주세요!' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -154,6 +171,20 @@ export default function PostUpdate({
               </FormItem>
             )}
           />
+
+          <FormField
+            control={form.control}
+            name='images'
+            render={({ field }) => (
+              <FormItem className='w-full'>
+                <FormLabel>이미지</FormLabel>
+                <FormControl>
+                  <Input placeholder='이미지 이름을 작성하세요!' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
 
         <div className='flex flex-col gap-5 md:flex-row'>
@@ -173,15 +204,15 @@ export default function PostUpdate({
         </div>
 
         <div className='relative'>
-          <Tabs defaultValue='description' className='w-full'>
+          <Tabs defaultValue='contents' className='w-full'>
             <TabsList>
-              <TabsTrigger value='description'>설명</TabsTrigger>
+              <TabsTrigger value='contents'>내용</TabsTrigger>
               <TabsTrigger value='components'>컴퍼넌트</TabsTrigger>
             </TabsList>
-            <TabsContent value='description'>
+            <TabsContent value='contents'>
               <FormField
                 control={form.control}
-                name='description'
+                name='contents'
                 render={({ field }) => (
                   <FormItem className='w-full'>
                     <FormControl>
@@ -192,9 +223,7 @@ export default function PostUpdate({
                         renderHTML={(text) => (
                           <ReactMarkdown>{text}</ReactMarkdown>
                         )}
-                        onChange={({ text }) =>
-                          form.setValue('description', text)
-                        }
+                        onChange={({ text }) => form.setValue('contents', text)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -217,6 +246,7 @@ export default function PostUpdate({
               />
             </TabsContent>
           </Tabs>
+
           <div className='absolute right-0 top-3'>
             <PostTooltip text='설명 또는 컴포넌트를 선택해서 적용할 수 있습니다. 컴포넌트는 코드 작성을 의미합니다.' />
           </div>

@@ -68,3 +68,9 @@ export const formatTimeAgo = (date: string | Date): string => {
   }
   return '방금 전'
 }
+
+// 하트 갯수 표시
+export const formatLikes = (numLikes?: number) => {
+  if (!numLikes || numLikes === 0) return null
+  return numLikes
+}

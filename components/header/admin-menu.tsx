@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
+import { MenuItem } from '@/lib/types'
 import {
   NavigationMenuItem,
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu'
-import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-import { MenuItem } from '@/lib/types'
 
 interface AdminMenuItemProps {
   menu: MenuItem
@@ -13,7 +13,7 @@ interface AdminMenuItemProps {
 export default function AdminMenu({ menu }: AdminMenuItemProps) {
   return (
     <NavigationMenuItem>
-      <Link href={menu.href} legacyBehavior passHref>
+      <Link href={menu.href} legacyBehavior passHref className='font-light'>
         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
           {menu.name}
         </NavigationMenuLink>

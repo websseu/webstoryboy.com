@@ -55,6 +55,7 @@ export const PostInputSchema = z.object({
   subCategory: z.string().optional(),
   components: z.string().optional(),
   description: z.string().optional(),
+  contents: z.string().optional(),
   isPublished: z.boolean().default(false),
   author: z.string().optional(),
   images: z.string().optional(),

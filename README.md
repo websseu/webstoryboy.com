@@ -99,4 +99,8 @@ npx shadcn@latest add checkbox
 npx shadcn@latest add tabs
 npx shadcn@latest add tooltip
 npx shadcn@latest add navigation-menu
+npx shadcn@latest add skeleton
+npx shadcn@latest add badge
+
+
 ```

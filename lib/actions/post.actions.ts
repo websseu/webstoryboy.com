@@ -8,7 +8,7 @@ import { IPostInput } from '../types'
 import { z } from 'zod'
 import { formatError } from '../utils'
 
-// 해당 ID글 가져오기
+// 해당 ID 글 가져오기
 export async function getPostById(postId: string) {
   await connectToDatabase()
   const post = await Post.findById(postId)
@@ -115,68 +115,21 @@ export async function updatePost(data: z.infer<typeof PostUpdateSchema>) {
   }
 }
 
-interface PostFilter {
-  category: string
-  subCategory?: string
-  isPublished: boolean
-}
-
-// 카테고리별 글 가져오기 (페이지네이션 포함)
-export const getPostsForCategory = async ({
-  category,
-  subCategory,
-  page = 1,
-  limit = 9,
-}: {
-  category: string
-  subCategory?: string
-  page: number
-  limit: number
-}) => {
+// 카테고리별 글 가져오기
+export async function getPostsForSubCategory(subCategory: string) {
   try {
     await connectToDatabase()
-
-    const filter: PostFilter = {
-      category: category,
+    const posts = await Post.find({ subCategory, isPublished: true }).sort({
+      createdAt: -1,
+    })
+    const totalCount = await Post.countDocuments({
+      subCategory,
       isPublished: true,
-    }
+    })
 
-    if (subCategory) {
-      filter.subCategory = subCategory
-    }
-
-    const totalPosts = await Post.countDocuments(filter)
-    const skipAmount = (Number(page) - 1) * limit
-    const posts = await Post.find(filter)
-      .sort({ createdAt: -1 })
-      .skip(skipAmount)
-      .limit(limit)
-      .lean()
-
-    const formattedPosts = posts.map((post) => ({
-      ...post,
-      title: post.title ?? '',
-      slug: post.slug ?? '',
-      category: post.category ?? '',
-      subCategory: post.subCategory ?? '',
-      images: post.images ?? '',
-      tags: post.tags ?? [],
-      numLikes: post.numLikes ?? 0,
-      numViews: post.numViews ?? 0,
-      author: post.author ?? '익명',
-      _id: post._id.toString(),
-      createdAt: post.createdAt.toISOString(),
-      updatedAt: post.createdAt.toISOString(),
-    }))
-
-    return {
-      posts: formattedPosts,
-      totalPages: Math.ceil(totalPosts / limit),
-      currentPage: page,
-      totalPosts,
-    }
+    return { success: true, posts, totalCount }
   } catch (error) {
-    console.error('데이터 가져오기 오류:', error)
-    throw new Error('데이터 가져오기 실패')
+    console.error('게시물 가져오기 오류:', error)
+    return { success: false, message: formatError(error) }
   }
 }
