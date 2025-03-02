@@ -41,9 +41,21 @@ export type NavItem = {
   items: NavMenuItemType[]
 }
 
+export type subItem = {
+  label: string
+  value: string
+}
+
+export type CateItme = {
+  label: string
+  value: string
+  subCategories: subItem[]
+}
+
 export type Data = {
   adminMenus: MenuItem[]
   menuData: NavItem[]
+  categories: CateItme[]
 }
 
 // 가상 데이터

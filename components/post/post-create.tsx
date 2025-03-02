@@ -16,6 +16,7 @@ import ReactMarkdown from 'react-markdown'
 import 'react-markdown-editor-lite/lib/index.css'
 import PostTag from './post-tag'
 import PostTooltip from './post-tooltip'
+import PostSelect from './post-select'
 import {
   Form,
   FormControl,
@@ -32,7 +33,7 @@ const postDefaultValues: IPostInput =
         slug: 'webdesign2025-A3',
         category: 'lecture',
         subCategory: 'webdesign2025',
-        components: 'webdesign03',
+        components: 'webdesign03.tsx',
         description: '웹디자인개발기능사 레이아웃 유형(A-3) 강의입니다.',
         contents: '',
         isPublished: true,
@@ -132,8 +133,11 @@ export default function PostCreate() {
             control={form.control}
             name='description'
             render={({ field }) => (
-              <FormItem className='w-full'>
-                <FormLabel>설명 *</FormLabel>
+              <FormItem className='w-full relative'>
+                <FormLabel>
+                  설명 *
+                  <PostTooltip text='SEO를 위한 페이지 설명입니다.' />
+                </FormLabel>
                 <FormControl>
                   <Input placeholder='설명을 적어주세요!' {...field} />
                 </FormControl>
@@ -144,32 +148,7 @@ export default function PostCreate() {
         </div>
 
         <div className='flex flex-col gap-5 md:flex-row'>
-          <FormField
-            control={form.control}
-            name='category'
-            render={({ field }) => (
-              <FormItem className='w-full'>
-                <FormLabel>카테고리</FormLabel>
-                <FormControl>
-                  <Input placeholder='카테고리를 선텍하세요!' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='subCategory'
-            render={({ field }) => (
-              <FormItem className='w-full'>
-                <FormLabel>서브 카테고리</FormLabel>
-                <FormControl>
-                  <Input placeholder='서브 카테고리를 선텍하세요!' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <PostSelect />
         </div>
 
         <div className='flex flex-col gap-5 md:flex-row'>

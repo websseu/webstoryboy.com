@@ -96,6 +96,15 @@
   --fontG: 'GmarketSans', sans-serif;
   --fontP: 'Poppins', sans-serif;
 }
+pre,
+code {
+  font-family: var(--fontN) !important;
+  line-height: 1.6 !important;
+  font-size: 14px !important;
+}
+code .linenumber {
+  font-style: normal !important;
+}
 
 @layer base {
   :root {
@@ -121,6 +130,14 @@
     --white700: #b7b7b7;
     --white800: #acacac;
     --white900: #9b9b9b;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
     --background: 0 0% 16%;
@@ -145,13 +162,21 @@
     --white700: #737373;
     --white800: #8a8a8a;
     --white900: #9b9b9b;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
 @layer components {
   /* header */
   .nav {
-    @apply absolute left-1/2 top-[99px] bg-background px-3 translate-x-[-50%] font-poppins;
+    @apply absolute z-50 left-1/2 top-[99px] bg-background px-3 translate-x-[-50%] font-poppins;
   }
   .nav__ul {
     @apply grid gap-x-3 p-4 w-[620px] grid-cols-[.55fr_1fr];
@@ -180,7 +205,7 @@
 
   /* main */
   .main__container {
-    @apply max-w-6xl mx-auto mt-7 sm:mt-14 p-4 min-h-[40vh];
+    @apply max-w-6xl mx-auto mt-7 sm:mt-14 py-4 min-h-[40vh];
   }
 
   /* footer */
@@ -194,6 +219,29 @@
   }
   .page__title > p {
     @apply text-zinc-500 mb-2 leading-6 text-sm break-keep;
+  }
+
+  /* post */
+  .post__page > h2 {
+    @apply text-2xl text-center font-nexon font-light mb-2;
+  }
+  .post__page > p {
+    @apply text-xs text-center text-zinc-500 mb-8;
+  }
+  .post__page .tag {
+    @apply text-center mb-10;
+  }
+  .post__page .tag a {
+    @apply bg-gray-200 px-5 py-2 mx-1 rounded-full text-sm text-gray-700 hover:bg-gray-300 transition;
+  }
+  .post__page .img img {
+    @apply mx-auto rounded-md;
+  }
+  .post__page .post {
+    @apply mt-20 text-zinc-600 leading-7 break-keep;
+  }
+  .post__contents p {
+    @apply mb-5;
   }
 
   /* cards */

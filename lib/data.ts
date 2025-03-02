@@ -145,6 +145,41 @@ const data: Data = {
       ],
     },
   ],
+  categories: [
+    {
+      label: '튜토리얼',
+      value: 'tutorial',
+      subCategories: [
+        { label: 'UI/UX CSS Design', value: 'uiux-design' },
+        { label: 'GSAP Interactive Animation', value: 'gsap-animation' },
+      ],
+    },
+    {
+      label: '강의',
+      value: 'lecture',
+      subCategories: [
+        { label: '웹디자인개발기능사 2025', value: 'webdesign2025' },
+        { label: '리액트를 위한 자바스크립트 기초', value: 'javascript-react' },
+      ],
+    },
+    {
+      label: '레퍼런스',
+      value: 'reference',
+      subCategories: [
+        { label: 'HTML 레퍼런스', value: 'html' },
+        { label: 'CSS 레퍼런스', value: 'css' },
+        { label: 'JAVASCRIPT 레퍼런스', value: 'javascript' },
+      ],
+    },
+    {
+      label: '인스퍼레이션',
+      value: 'inspiration',
+      subCategories: [
+        { label: 'SITE 인스퍼레이션', value: 'site' },
+        { label: 'TUTORIAL 인스퍼레이션', value: 'tutorial' },
+      ],
+    },
+  ],
 }
 
 export default data

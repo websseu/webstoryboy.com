@@ -85,6 +85,9 @@ npm i @hookform/resolvers
 ```
 npm i react-markdown --legacy-peer-deps
 npm i react-markdown-editor-lite --legacy-peer-deps
+
+npm install react-syntax-highlighter --legacy-peer-deps
+npm i --save-dev @types/react-syntax-highlighter --legacy-peer-deps
 ```
 
 ```
@@ -101,6 +104,10 @@ npx shadcn@latest add tooltip
 npx shadcn@latest add navigation-menu
 npx shadcn@latest add skeleton
 npx shadcn@latest add badge
-
-
+npx shadcn@latest add select
+npx shadcn@latest add breadcrumb
+npx shadcn@latest add separator
+npx shadcn@latest add sidebar
+npx shadcn@latest add collapsible
+npx shadcn@latest add avatar
 ```

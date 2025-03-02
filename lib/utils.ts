@@ -74,3 +74,19 @@ export const formatLikes = (numLikes?: number) => {
   if (!numLikes || numLikes === 0) return null
   return numLikes
 }
+
+// 글 페이지 날짜
+export function formatPostDate(dateInput: string | Date): string {
+  const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput
+
+  return (
+    new Intl.DateTimeFormat('ko-KR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    }).format(date) + '에 발행되었습니다.'
+  )
+}
