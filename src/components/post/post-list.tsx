@@ -24,12 +24,29 @@ interface PostListProps {
 
 export default function PostList({ subCategory, currentSlug }: PostListProps) {
   const [lectures, setLectures] = useState<Lecture[]>([])
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     async function fetchLectures() {
       const data = await getPostsBySubCategory(subCategory)
-      setLectures(data)
+
+      // Check if the response is an error object
+      if (data && 'success' in data && data.success === false) {
+        setError(data.error || '강의를 불러오는 중 오류가 발생했습니다.')
+        return
+      }
+
+      // If it's an array, it's the successful response
+      if (Array.isArray(data)) {
+        // Map the data to match the Lecture interface
+        const formattedLectures: Lecture[] = data.map((post) => ({
+          title: post.title,
+          slug: post.slug,
+        }))
+        setLectures(formattedLectures)
+      }
     }
+
     if (subCategory) {
       fetchLectures()
     }
@@ -50,7 +67,9 @@ export default function PostList({ subCategory, currentSlug }: PostListProps) {
         </SheetTitle>
         <ScrollArea className='h-[calc(100vh-90px)]'>
           <div className='flex flex-col gap-3'>
-            {lectures.length > 0 ? (
+            {error ? (
+              <p className='text-sm text-red-500'>{error}</p>
+            ) : lectures.length > 0 ? (
               lectures.map((lecture) => (
                 <Link
                   key={lecture.slug}
