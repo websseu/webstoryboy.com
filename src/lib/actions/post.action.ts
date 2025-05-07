@@ -13,8 +13,11 @@ import { auth } from '@/auth'
 // getAllPostsPages : 모든 글 가져오기(페이지)
 // getPostById : 해당 ID 글 가져오기
 // getPostBySlug : 해당 slug 글 가져오기
-// getPostsBySubCategory : 서브카테고리 기준으로 해당 글 가져오기
-// getPostsForSubCategory : 카테고리별 글 가져오기
+// getPostsBySubCategory : 서브카테고리 기준으로 글 가져오기(제목, 슬로그, ID)
+// getPostsForSubCategory : 서브카테고리 기준으로 글 가져오기
+
+// increasePostViews : 조회수
+// likePost : 좋아요
 
 // 글 쓰기
 export async function createPost(data: IPostInput) {
@@ -189,10 +192,11 @@ export async function getPostsBySubCategory(subCategory: string) {
   }
 }
 
-// 카테고리별 글 가져오기
+// 서브카테고리 기준으로 카테고리별 글 가져오기
 export async function getPostsForSubCategory(subCategory: string) {
   try {
     await connectToDatabase()
+
     const posts = await Post.find({ subCategory, isPublished: true })
       .sort({ createdAt: 1 })
       .lean()

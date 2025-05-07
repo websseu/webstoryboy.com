@@ -8,11 +8,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogFooter,
 } from '@/components/ui/dialog'
 import FindEmailForm from './find-email'
-import { Button } from '../ui/button'
-import { DialogClose } from '@radix-ui/react-dialog'
 
 export default function FindEmailDialog() {
   const [open, setOpen] = useState(false)
@@ -32,13 +29,6 @@ export default function FindEmailDialog() {
           </DialogDescription>
         </DialogHeader>
         <FindEmailForm />
-        <DialogFooter className='sm:justify-start'>
-          <DialogClose asChild>
-            <Button type='button' variant='secondary'>
-              Close
-            </Button>
-          </DialogClose>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   )

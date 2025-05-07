@@ -1,5 +1,5 @@
-// app/admin/contact/page.tsx
 import { Metadata } from 'next'
+import { formatDateTime } from '@/lib/utils'
 import { getContacts } from '@/lib/actions/contact.action'
 import {
   Table,
@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/table'
 import PageIndex from '@/components/page/page-index'
 import PageSelector from '@/components/page/page-selector'
-import { formatDateTime } from '@/lib/utils'
 import ContactDelete from '@/components/contact/contact-delete'
 
 export const metadata: Metadata = {
@@ -26,23 +25,15 @@ export default async function AdminContactPage(props: {
   const currentPage = Number(page)
   const perPage = Number(limit)
 
-  const res = await getContacts()
+  const res = await getContacts(currentPage, perPage)
   if (!res.success) {
-    console.error('문의사항 목록 불러오기 오류:', res.error)
-    return (
-      <div className='max-w-6xl mx-auto p-4 text-red-600'>
-        문의사항을 불러오는 중 오류가 발생했습니다.
-      </div>
-    )
+    console.error('회원 목록 불러오기 오류:', res.error)
+    return null
   }
-  const allContacts = res.contacts || []
 
-  const totalItems = allContacts.length
+  const pageContacts = res.contacts || []
+  const totalItems = res.totalItems || 0
   const totalPages = Math.max(1, Math.ceil(totalItems / perPage))
-  const pageContacts = allContacts.slice(
-    (currentPage - 1) * perPage,
-    currentPage * perPage
-  )
 
   return (
     <section>
@@ -91,7 +82,7 @@ export default async function AdminContactPage(props: {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={5} className='text-center py-4'>
+                <TableCell colSpan={6} className='text-center py-4'>
                   등록된 문의사항이 없습니다.
                 </TableCell>
               </TableRow>

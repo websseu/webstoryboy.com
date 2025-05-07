@@ -44,7 +44,7 @@ export default function FindEmailForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <div className='flex gap-2 mt-4 mb-5'>
+                <div className='flex gap-2 mt-4 mb-1'>
                   <Input
                     {...field}
                     className='flex-1'

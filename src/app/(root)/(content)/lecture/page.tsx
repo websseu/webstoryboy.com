@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { TvMinimalPlay } from 'lucide-react'
 
 export default async function LecturePage() {
   return (
@@ -91,8 +92,9 @@ export default async function LecturePage() {
 
               <Link
                 href='/lecture/webdesign2025'
-                className='w-full flex items-center justify-center p-4 mt-8 bg-amber-100 rounded'
+                className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
               >
+                <TvMinimalPlay />
                 시작하기
               </Link>
             </div>
@@ -160,6 +162,14 @@ export default async function LecturePage() {
                 되고 싶다면, 이 강의를 통해 현대 프론트엔드 개발의 기준을 나만의
                 것으로 만들어보세요.
               </p>
+
+              <Link
+                href='/lecture'
+                className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
+              >
+                <TvMinimalPlay />
+                아직 준비중입니다.
+              </Link>
             </div>
           </TabsContent>
         </Tabs>

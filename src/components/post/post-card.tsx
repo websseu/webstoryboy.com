@@ -15,15 +15,19 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { Skeleton } from '@/components/ui/skeleton'
 
-interface PageCardProps {
-  posts: IPostUpdate[]
+interface PostCardProps {
+  posts?: IPostUpdate[] // undefined일 때 로딩 상태
+  isLoading?: boolean
 }
 
-export default function PostCard({ posts }: PageCardProps) {
+export default function PostCard({
+  posts = [],
+  isLoading = false,
+}: PostCardProps) {
   const [viewMode, setViewMode] = useState<'card' | 'table'>('card')
 
-  // 로딩 시 localStorage에서 뷰 모드 읽어오기
   useEffect(() => {
     const savedMode = localStorage.getItem('pageCardViewMode')
     if (savedMode === 'card' || savedMode === 'table') {
@@ -31,10 +35,80 @@ export default function PostCard({ posts }: PageCardProps) {
     }
   }, [])
 
-  // 뷰 모드 변경 핸들러
   const handleChangeViewMode = (mode: 'card' | 'table') => {
     setViewMode(mode)
     localStorage.setItem('pageCardViewMode', mode)
+  }
+
+  // 로딩 중일 때 Skeleton 렌더
+  if (isLoading) {
+    return (
+      <div className='card__wrap'>
+        <div className='relative mb-4 mt-6'>
+          <div className='absolute top-[-50px] right-0 flex gap-1'>
+            <Button
+              size='sm'
+              variant={viewMode === 'card' ? 'default' : 'outline'}
+              className='w-7 h-7'
+            >
+              <LayoutGrid />
+            </Button>
+            <Button
+              size='sm'
+              variant={viewMode === 'table' ? 'default' : 'outline'}
+              className='w-7 h-7'
+            >
+              <List />
+            </Button>
+          </div>
+        </div>
+
+        {viewMode === 'card' ? (
+          <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className='card'>
+                <Skeleton className='h-40 w-full rounded-lg' />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className='overflow-x-auto'>
+            <Table className='border-b text-sm'>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>번호</TableHead>
+                  <TableHead>제목</TableHead>
+                  <TableHead>카테고리</TableHead>
+                  <TableHead>태그</TableHead>
+                  <TableHead>작성일</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <TableRow key={i}>
+                    <TableCell>
+                      <Skeleton className='h-4 w-4' />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton className='h-4 w-24' />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton className='h-4 w-16' />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton className='h-4 w-20' />
+                    </TableCell>
+                    <TableCell>
+                      <Skeleton className='h-4 w-12' />
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        )}
+      </div>
+    )
   }
 
   return (
@@ -60,9 +134,8 @@ export default function PostCard({ posts }: PageCardProps) {
         </div>
       </div>
 
-      {/* 카드 뷰 */}
       {viewMode === 'card' && (
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
           {posts.length > 0 ? (
             posts.map((post) => (
               <div key={post._id} className='card'>
@@ -94,7 +167,6 @@ export default function PostCard({ posts }: PageCardProps) {
         </div>
       )}
 
-      {/* 테이블 뷰 */}
       {viewMode === 'table' && (
         <div className='overflow-x-auto'>
           <Table className='border-b text-sm'>

@@ -33,8 +33,8 @@ export default function UserProfile({ session }: UserProfileProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className='flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-accent rounded cursor-pointer text-zinc-600'>
-          <PencilLine className='h-4 w-4' />
+        <div className='flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-accent rounded cursor-pointer'>
+          <PencilLine className='h-4 w-4 text-zinc-500' />
           프로필
         </div>
       </DialogTrigger>

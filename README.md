@@ -102,6 +102,7 @@ npx shadcn@latest add scroll-area
 npx shadcn@latest add accordion
 npx shadcn@latest add textarea
 npx shadcn@latest add card
+npx shadcn@latest add skeleton
 ```
 
 ### 02. 기본 셋팅

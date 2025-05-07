@@ -8,7 +8,6 @@ import {
   UserSignUpSchema,
 } from './validator'
 
-// 메뉴 데이터
 export type MenuCard = {
   title: string
   description: string
@@ -30,8 +29,15 @@ export type MenuSection = {
   items: MenuItemType[]
 }
 
+// 메뉴 데이터
 export type Data = {
   menuData: MenuSection[]
+}
+
+// 가상 데이터
+export type InputData = {
+  users: IUserInput[]
+  posts: IPostInput[]
 }
 
 // 문의하기

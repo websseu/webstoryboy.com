@@ -43,38 +43,21 @@ export function formatDateTime(dateInput: Date | string): string {
 export function formatPostDate(dateInput: string | Date): string {
   const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput
 
-  return (
-    new Intl.DateTimeFormat('ko-KR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true,
-    }).format(date) + '에 발행'
-  )
+  return new Intl.DateTimeFormat('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  }).format(date)
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const formatError = (error: any): string => {
-  if (error.name === 'ZodError') {
-    const fieldErrors = Object.keys(error.errors).map((field) => {
-      const errorMessage = error.errors[field].message
-      return `${error.errors[field].path}: ${errorMessage}` // field: errorMessage
-    })
-    return fieldErrors.join('. ')
-  } else if (error.name === 'ValidationError') {
-    const fieldErrors = Object.keys(error.errors).map((field) => {
-      const errorMessage = error.errors[field].message
-      return errorMessage
-    })
-    return fieldErrors.join('. ')
-  } else if (error.code === 11000) {
-    const duplicateField = Object.keys(error.keyValue)[0]
-    return `${duplicateField} already exists`
-  } else {
-    return typeof error.message === 'string'
-      ? error.message
-      : JSON.stringify(error.message)
-  }
-}
+// 슬러그
+export const toSlug = (text: string): string =>
+  text
+    .toLowerCase()
+    .replace(/[^\w\s-]+/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-')

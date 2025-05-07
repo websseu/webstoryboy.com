@@ -11,7 +11,7 @@ export default function ErrorPage({
 }) {
   return (
     <div className='flex flex-col items-center justify-center min-h-screen '>
-      <div className='p-6 w-1/3 text-center'>
+      <div className='p-6 text-center'>
         <h1 className='text-4xl font-poppins font-light mb-4'>Error</h1>
         <p className='text-destructive'>{error.message}</p>
         <Button variant='outline' className='mt-4' onClick={() => reset()}>

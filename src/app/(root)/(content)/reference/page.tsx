@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { TvMinimalPlay } from 'lucide-react'
 
 export default function ReferencePage() {
   return (
@@ -65,6 +67,14 @@ export default function ReferencePage() {
                 있습니다. 기초부터 튼튼하게, 실무에 강한 마크업 실력을 지금 이
                 강의에서 시작해보세요.
               </p>
+
+              <Link
+                href='/'
+                className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
+              >
+                <TvMinimalPlay />
+                아직 준비중입니다.
+              </Link>
             </div>
           </TabsContent>
           <TabsContent value='tab-2'>
@@ -137,6 +147,14 @@ export default function ReferencePage() {
                 웹 디자인의 기본기를 정립하고, 구조적이고 아름다운 웹을 만들
                 준비가 되었다면 지금 이 강의로 시작해보세요.
               </p>
+
+              <Link
+                href='/'
+                className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
+              >
+                <TvMinimalPlay />
+                아직 준비중입니다.
+              </Link>
             </div>
           </TabsContent>
           <TabsContent value='tab-3'>
@@ -213,6 +231,14 @@ export default function ReferencePage() {
                 소통하는 기능 구현까지, 단계적으로 익히며 개발자로 성장할 수
                 있는 기반을 지금 이 강의에서 시작해보세요.
               </p>
+
+              <Link
+                href='/'
+                className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
+              >
+                <TvMinimalPlay />
+                아직 준비중입니다.
+              </Link>
             </div>
           </TabsContent>
         </Tabs>

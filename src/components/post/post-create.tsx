@@ -31,16 +31,16 @@ import 'react-markdown-editor-lite/lib/index.css'
 const postDefaultValues: IPostInput =
   process.env.NODE_ENV === 'development'
     ? {
-        title: '웹디자인개발기능사 레이아웃 유형(A-3)',
-        slug: 'webdesign2025-A3',
+        title: '웹디자인개발기능사 레이아웃 유형(A-1)',
+        slug: 'webdesign2025-A1',
         category: 'lecture',
         subCategory: 'webdesign2025',
-        components: 'webdesign03.tsx',
-        description: '웹디자인개발기능사 레이아웃 유형(A-3) 강의입니다.',
+        components: 'webdesign01.tsx',
+        description: '웹디자인개발기능사 레이아웃 유형(A-1) 강의입니다.',
         contents: '',
         isPublished: true,
         author: '웹스토리보이',
-        images: 'webdesign03.jpg',
+        images: 'webdesign01.jpg',
         youtubeId: '',
         tags: ['레이아웃', 'A유형'],
         reviews: [],

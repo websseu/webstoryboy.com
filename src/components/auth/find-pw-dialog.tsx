@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import FindPasswordForm from './find-pw'
 import {
   Dialog,
   DialogTrigger,
@@ -8,11 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogFooter,
-  DialogClose,
 } from '@/components/ui/dialog'
-import FindPasswordForm from './find-pw'
-import { Button } from '../ui/button'
 
 export default function FindPasswordDialog() {
   const [open, setOpen] = useState(false)
@@ -32,13 +29,6 @@ export default function FindPasswordDialog() {
           </DialogDescription>
         </DialogHeader>
         <FindPasswordForm setOpen={setOpen} />
-        <DialogFooter className='sm:justify-start'>
-          <DialogClose asChild>
-            <Button type='button' variant='secondary'>
-              Close
-            </Button>
-          </DialogClose>
-        </DialogFooter>
       </DialogContent>
     </Dialog>
   )

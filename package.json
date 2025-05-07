@@ -1,12 +1,13 @@
 {
-  "name": "webstoryboy25",
+  "name": "webstoryboy.com2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "npx tsx src/lib/db/seed.ts"
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.9.0",

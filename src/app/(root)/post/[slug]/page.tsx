@@ -10,6 +10,7 @@ import PostViews from '@/components/post/post-view'
 import PostLike from '@/components/post/post-like'
 import PostList from '@/components/post/post-list'
 import PostPdf from '@/components/post/post-pdf'
+import PostComments from '@/components/post/post-comments'
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>
@@ -104,9 +105,11 @@ export default async function PostDetailPage(props: {
 
         <aside className='post__sidebar '>
           <div className='ad w-[300px] h-[300px] bg-amber-200 mx-auto'></div>
+
           {post.subCategory && (
             <PostList subCategory={post.subCategory} currentSlug={post.slug} />
           )}
+
           <div className='flex justify-between gap-2'>
             <div className='w-1/2'>
               <PostPdf />
@@ -149,6 +152,7 @@ export default async function PostDetailPage(props: {
               </Link>
             </div>
           </div>
+          <PostComments />
         </aside>
       </div>
     </section>

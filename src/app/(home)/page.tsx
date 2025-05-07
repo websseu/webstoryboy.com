@@ -29,7 +29,7 @@ export default function HomePage() {
         단순한 코드 그 이상의 경험, 당신의 개발 이야기를 완성하세요!
       </p>
 
-      <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+      <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-12'>
         {data.menuData.map((item) => (
           <div key={item.label} className='border rounded p-4'>
             {iconMap[item.card.icon as keyof typeof iconMap]}
@@ -48,6 +48,11 @@ export default function HomePage() {
             </Link>
           </div>
         ))}
+      </div>
+
+      <div className=''>
+        <h2 className='text-xl text-center'>웹디자인개발기능사</h2>
+        <div></div>
       </div>
     </section>
   )

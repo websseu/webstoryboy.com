@@ -11,7 +11,7 @@ const Email = z
   .email('올바른 이메일 형식이 아닙니다.')
 const Password = z
   .string()
-  .min(8, { message: '비밀번호는 최소 8자 이상이어야 합니다.' })
+  .min(6, { message: '비밀번호는 최소 6자 이상이어야 합니다.' })
   .max(20, { message: '비밀번호는 최대 20자까지 가능합니다.' })
 const Title = z
   .string()
@@ -96,6 +96,8 @@ export const PostInputSchema = z.object({
   numViews: z.number().optional(),
   numLikes: z.number().optional(),
   reviews: z.array(z.string()).optional(),
+  createdAt: z.coerce.date().optional(),
+  updatedAt: z.coerce.date().optional(),
   likes: z
     .array(
       z.object({
@@ -104,8 +106,6 @@ export const PostInputSchema = z.object({
       })
     )
     .optional(),
-  createdAt: z.coerce.date().optional(),
-  updatedAt: z.coerce.date().optional(),
 })
 
 // 글쓰기 업데이트

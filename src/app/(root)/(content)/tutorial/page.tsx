@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { TvMinimalPlay } from 'lucide-react'
 
 export default function TutorialPage() {
   return (
@@ -61,6 +63,14 @@ export default function TutorialPage() {
               구조적인 구현, 그 균형을 이 강의에서 경험하세요. 웹 UI/UX의 기본과
               실무 구현 능력을 모두 갖춘 당신을 위한 강의입니다.
             </p>
+
+            <Link
+              href='/lecture'
+              className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
+            >
+              <TvMinimalPlay />
+              아직 준비중입니다.
+            </Link>
           </div>
         </TabsContent>
         <TabsContent value='tab-2'>
@@ -132,6 +142,14 @@ export default function TutorialPage() {
               구현하고 싶다면 지금 GSAP Interactive Animation 강의로 새로운 웹
               경험을 만들어보세요.
             </p>
+
+            <Link
+              href='/lecture'
+              className='w-full flex items-center justify-center gap-2 p-2 mt-8 rounded font-bold text-sm bg-amber-100'
+            >
+              <TvMinimalPlay />
+              아직 준비중입니다.
+            </Link>
           </div>
         </TabsContent>
       </Tabs>

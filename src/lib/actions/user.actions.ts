@@ -23,6 +23,8 @@ import { sendPasswordResetCodeEmail } from '@/email/email-password'
 // deleteUser : 해당(id) 회원 삭제
 // updateUser : 해당(id) 회원 정보 수정
 
+// checkEmailExists : 이메일 존재 여부 확인
+
 // 회원가입
 export async function registerUser(userSignUp: IUserSignUp) {
   try {
@@ -221,70 +223,7 @@ export async function updateUser(
   }
 }
 
-export async function sendPasswordResetCode(email: string) {
-  try {
-    await connectToDatabase()
-
-    const user = await User.findOne({ email })
-    if (!user) {
-      return { success: false, error: '등록되지 않은 이메일입니다.' }
-    }
-
-    // 6자리 인증코드 생성
-    const code = Math.floor(100000 + Math.random() * 900000).toString()
-
-    // 기존 코드 삭제 후 새로 저장
-    await PasswordResetCode.deleteMany({ email })
-
-    await PasswordResetCode.create({
-      email,
-      code,
-      expiresAt: new Date(Date.now() + 1000 * 60 * 5), // 5분 유효
-    })
-
-    // 이메일 전송
-    await sendPasswordResetCodeEmail(email, code)
-
-    return { success: true }
-  } catch (error) {
-    return {
-      success: false,
-      error: JSON.stringify(error),
-    }
-  }
-}
-
-export async function verifyPasswordResetCode(email: string, code: string) {
-  await connectToDatabase()
-
-  const record = await PasswordResetCode.findOne({ email, code })
-  if (!record) {
-    return { success: false, error: '인증번호가 일치하지 않습니다.' }
-  }
-
-  if (record.expiresAt < new Date()) {
-    return { success: false, error: '인증번호가 만료되었습니다.' }
-  }
-
-  await PasswordResetCode.deleteOne({ _id: record._id })
-
-  return { success: true }
-}
-
-export async function resetUserPassword(email: string, newPassword: string) {
-  await connectToDatabase()
-
-  const user = await User.findOne({ email })
-  if (!user) {
-    return { success: false, error: '사용자를 찾을 수 없습니다.' }
-  }
-
-  user.password = await bcrypt.hash(newPassword, 10)
-  await user.save()
-
-  return { success: true, message: '비밀번호가 성공적으로 변경되었습니다.' }
-}
-
+// 이메일 존재 여부 확인
 export async function checkEmailExists(email: string) {
   try {
     await connectToDatabase()
@@ -302,4 +241,78 @@ export async function checkEmailExists(email: string) {
       error: JSON.stringify(error),
     }
   }
+}
+
+// 주어진 이메일로 비밀번호 재설정 코드를 생성하고 전송
+export async function sendPasswordResetCode(email: string) {
+  try {
+    await connectToDatabase()
+
+    // 사용자가 존재하는지 확인
+    const user = await User.findOne({ email })
+    if (!user) {
+      return { success: false, error: '등록되지 않은 이메일입니다.' }
+    }
+
+    // 6자리 인증코드 생성
+    const code = Math.floor(100000 + Math.random() * 900000).toString()
+
+    // 기존 코드 삭제 후 새로 저장
+    await PasswordResetCode.deleteMany({ email })
+
+    // 새로운 인증 코드 저장 (5분 후 만료)
+    await PasswordResetCode.create({
+      email,
+      code,
+      expiresAt: new Date(Date.now() + 1000 * 60 * 5), // 5분 유효
+    })
+
+    // 생성된 인증 코드를 이메일로 전송
+    await sendPasswordResetCodeEmail(email, code)
+
+    return { success: true }
+  } catch (error) {
+    return {
+      success: false,
+      error: JSON.stringify(error),
+    }
+  }
+}
+
+// 이메일과 인증 코드가 일치하는지 확인하고 유효 기간을 검사
+export async function verifyPasswordResetCode(email: string, code: string) {
+  await connectToDatabase()
+
+  // 이메일과 코드로 인증 코드 레코드 조회
+  const record = await PasswordResetCode.findOne({ email, code })
+  if (!record) {
+    return { success: false, error: '인증번호가 일치하지 않습니다.' }
+  }
+
+  // 코드가 만료되었는지 확인
+  if (record.expiresAt < new Date()) {
+    return { success: false, error: '인증번호가 만료되었습니다.' }
+  }
+
+  // 인증 코드 사용 후 삭제 (일회용)
+  await PasswordResetCode.deleteOne({ _id: record._id })
+
+  return { success: true }
+}
+
+// 이메일로 사용자 조회 후 새 비밀번호로 변경
+export async function resetUserPassword(email: string, newPassword: string) {
+  await connectToDatabase()
+
+  // 이메일로 사용자 조회
+  const user = await User.findOne({ email })
+  if (!user) {
+    return { success: false, error: '사용자를 찾을 수 없습니다.' }
+  }
+
+  // 새 비밀번호를 해시하여 저장
+  user.password = await bcrypt.hash(newPassword, 10)
+  await user.save()
+
+  return { success: true, message: '비밀번호가 성공적으로 변경되었습니다.' }
 }

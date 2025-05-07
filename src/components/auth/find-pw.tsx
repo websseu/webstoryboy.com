@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import { z } from 'zod'
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
@@ -20,7 +21,6 @@ import {
   verifyPasswordResetCode,
   resetUserPassword,
 } from '@/lib/actions/user.actions'
-import { useRouter } from 'next/navigation'
 
 const EmailSchema = z.object({
   email: z.string().email(),
