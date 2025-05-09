@@ -14,11 +14,11 @@ export default function Webdesign15() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 D-3.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutD-3.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 D-3으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 D-3으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -27,7 +27,7 @@ export default function Webdesign15() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 D-3</title>
+    <title>웹디자인개발기능사 레이아웃 D-3</title>
 </head>
 <body>
     
@@ -64,17 +64,17 @@ export default function Webdesign15() {
 }
 #aside {
     width: 200px;
-    height: 650px;
+    height: 850px;
     background-color: #efefef;
 }
 #main {
     width: calc(100% - 200px);
-    height: 650px;
+    height: 850px;
     background-color: #e3e3e3;
 }
 #footer {
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: #d9d9d9;
 }`}
       />
@@ -132,7 +132,7 @@ export default function Webdesign15() {
 }
 #footer {
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: #bcbcbc;
 }`}
       />
@@ -255,33 +255,95 @@ export default function Webdesign15() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        D-3 유형은 D-1 유형과 기본 레이아웃 구조는 거의 동일하지만,
-        <strong>푸터 구조에서만 차이점</strong>이 있습니다. 이번 유형을 통해
-        다음과 같은 개념을 다시 복습해볼 수 있었습니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <strong>반응형 레이아웃 설계</strong>: <code>calc(100% - 200px)</code>
-          을 활용한 유동 폭 계산
+          <code>&lt;aside&gt;</code> : 고정된 사이드바로 로고와 메뉴가
+          포함됩니다.
         </li>
         <li>
-          <strong>position 속성</strong>: <code>absolute</code>와
-          <code>relative</code>의 관계
+          <code>&lt;main&gt;</code> : 슬라이더, 배너, 콘텐츠 영역 등 주요
+          콘텐츠가 배치됩니다.
         </li>
         <li>
-          <strong>섹션 분리</strong>: 슬라이더, 배너, 콘텐츠, 푸터 영역 구성
+          <code>&lt;article&gt;</code> : 슬라이드와 배너처럼 독립적인 콘텐츠
+          블록 표현에 사용됩니다.
         </li>
         <li>
-          <strong>레이아웃 계층</strong>: 푸터 내에서 중첩된 박스 구조 만들기
+          <code>&lt;section&gt;</code> : 일반적인 콘텐츠 그룹을 표현하며,
+          공지사항 등에 활용됩니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 정보를 담는 영역으로 3분할
+          구조를 가집니다.
         </li>
       </ul>
-      <p>
-        각 요소마다 <code>width</code>, <code>height</code>,
-        <code>background-color</code>를 활용해 구조를 시각적으로 빠르게 확인할
-        수 있는 방법도 익혔습니다. 이렇게 시각적 피드백을 통해 레이아웃을 잡는
-        습관은 실무에서도 매우 유용합니다.
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → <code>#wrap</code>, <code>#footer</code>
+          에 사용되어 가로 정렬을 구현합니다.
+        </li>
+        <li>
+          <code>flex-wrap: wrap</code> → 줄바꿈을 허용하여 <code>#footer</code>
+          가 아래로 내려가도록 합니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 200px)</code> → 고정 사이드바(200px)를 제외한
+          가변 메인 영역을 계산합니다.
+        </li>
+        <li>
+          <code>position: relative</code> + <code>absolute</code> → 슬라이드
+          위에 링크 배치를 위해 사용됩니다.
+        </li>
+        <li>
+          <code>background-color</code> → 구조 파악을 위해 각 요소마다 구분
+          색상을 지정했습니다.
+        </li>
+      </ul>
+
+      <h5>✅ flex 속성 정리</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 자식 요소를 가로로 정렬합니다.
+        </li>
+        <li>
+          <code>flex-direction</code> → 정렬 방향 설정 (기본: <code>row</code>,
+          세로: <code>column</code>)
+        </li>
+        <li>
+          <code>justify-content</code> → 주축(가로)에서 정렬 방식 지정 (
+          <code>center</code>, <code>space-between</code> 등)
+        </li>
+        <li>
+          <code>align-items</code> → 교차축(세로) 정렬 방식 지정
+        </li>
+        <li>
+          <code>flex-wrap</code> → 자식 요소 줄바꿈 여부 설정 (<code>wrap</code>{' '}
+          사용)
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          <code>calc()</code>를 활용한 반응형 레이아웃 구성법을 익혔습니다.
+        </li>
+        <li>
+          <code>position</code> 속성을 활용해 요소의 정확한 위치를 제어하는
+          연습을 했습니다.
+        </li>
+        <li>
+          <code>flex</code> 속성을 활용해 가로 정렬 및 줄바꿈 처리를
+          구현했습니다.
+        </li>
+        <li>
+          <code>background-color</code>로 시각적 구조 확인 및 디버깅이
+          가능하도록 설정했습니다.
+        </li>
+      </ul>
+
       <h4>4. 마무리</h4>
       <p>
         이제 D-3 유형도 무사히 완성했습니다! 👏 앞서 진행한 D-1, D-2 유형과

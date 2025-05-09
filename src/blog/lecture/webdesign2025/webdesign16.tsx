@@ -15,11 +15,11 @@ export default function Webdesign16() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 D-4.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutD-4.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 D-4으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 D-4으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -28,7 +28,7 @@ export default function Webdesign16() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 D-4</title>
+    <title>웹디자인개발기능사 레이아웃 D-4</title>
 </head>
 <body>
     
@@ -65,12 +65,12 @@ export default function Webdesign16() {
 }
 #aside {
     width: 200px;
-    height: 650px;
+    height: 800px;
     background-color: #efefef;
 }
 #main {
     width: calc(100% - 200px);
-    height: 650px;
+    height: 800px;
     background-color: #e3e3e3;
 }
 #footer {
@@ -108,12 +108,12 @@ export default function Webdesign16() {
 }
 #aside {
     width: 200px;
-    height: 850px;
+    height: 800px;
     background-color: #efefef;
 }
 #main {
     width: calc(100% - 200px);
-    height: 850px;
+    height: 800px;
     background-color: #e3e3e3;
 }
 #slider {
@@ -133,7 +133,7 @@ export default function Webdesign16() {
 }
 #footer {
     width: 100%;
-    height: 100px;
+    height: 120px;
     background-color: #bcbcbc;
 }`}
       />
@@ -161,7 +161,7 @@ export default function Webdesign16() {
 }
 #aside .nav {
     width: 100%;
-    height: 750px;
+    height: 700px;
     background-color: #e3e3e3;
 }`}
       />
@@ -263,33 +263,69 @@ export default function Webdesign16() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        D-4 유형은 D유형의 마지막 레이아웃으로, 지금까지 배운 반응형 레이아웃
-        구조를 복습하고 마무리할 수 있는 좋은 예제입니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <strong>기본 레이아웃 구성</strong>: <code>aside</code>,
-          <code>main</code>, <code>footer</code>를 기준으로 정리
+          <code>&lt;aside&gt;</code> : 고정된 사이드 메뉴 영역으로, 로고와
+          내비게이션이 포함됩니다.
         </li>
         <li>
-          <strong>반응형 연산</strong>: <code>calc(100% - 200px)</code>을 사용해
-          가변형 콘텐츠 영역 확보
+          <code>&lt;main&gt;</code> : 슬라이드, 링크, 콘텐츠 영역 등 주요
+          콘텐츠가 위치합니다.
         </li>
         <li>
-          <strong>세부 구성</strong>: 슬라이더, 링크, 공지사항 콘텐츠, 그리고
-          3단 푸터 구조 구현
+          <code>&lt;article&gt;</code> : 슬라이드와 링크 같은 독립적인 콘텐츠
+          블록을 구성할 때 사용됩니다.
         </li>
         <li>
-          <strong>구조적 중첩</strong>: 푸터 내부의 중첩된 <code>div</code>들을
-          flex로 배치하고 시각적으로 확인
+          <code>&lt;section&gt;</code> : 공지사항 콘텐츠 등을 묶을 때
+          사용됩니다. 이번에는 두 개의 콘텐츠 박스를 포함합니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 영역으로 3분할 구조 + 중첩
+          구조로 구성되어 있습니다.
         </li>
       </ul>
-      <p>
-        특히 푸터 구조는 <strong>3개 박스 + 2단 중첩 구조</strong>로 설계되어
-        있어 레이아웃 배치 연습에 적합합니다. 이번 유형을 통해 CSS 구조 설계
-        감각과 영역 분리 능력을 더욱 다듬을 수 있었어요.
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → <code>#wrap</code>과 <code>#footer</code>{' '}
+          등에 적용하여 가로 정렬을 구현합니다.
+        </li>
+        <li>
+          <code>flex-wrap: wrap</code> → 줄 바꿈을 가능하게 하여 푸터가 아래로
+          내려가도록 설정합니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 200px)</code> → 고정 사이드 영역을 제외한
+          가변형 메인 콘텐츠 영역을 계산합니다.
+        </li>
+        <li>
+          <code>background-color</code> → 구조 시각화를 위해 각 영역마다
+          구분되는 색상 지정이 활용되었습니다.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          <code>calc()</code>를 활용해 고정된 사이드바와 가변 콘텐츠 영역을
+          조합한 반응형 레이아웃 설계를 복습했습니다.
+        </li>
+        <li>
+          <code>display: flex</code>와 <code>flex-wrap</code>을 활용하여 가로
+          정렬과 줄바꿈 처리를 구현했습니다.
+        </li>
+        <li>
+          <code>section</code>과 <code>footer</code> 내부에 중첩된{' '}
+          <code>div</code> 요소를 구성하여 계층적 구조를 이해했습니다.
+        </li>
+        <li>
+          각 요소에 <code>background-color</code>를 적용해 시각적 구조를 빠르게
+          파악하고 디버깅하는 법을 연습했습니다.
+        </li>
+      </ul>
       <h4>4. 마무리</h4>
       <p>
         자, 이렇게 해서 D유형의 마지막 레이아웃인 <strong>D-4 유형</strong>까지

@@ -11,7 +11,7 @@ export default function Webdesign13() {
         크기에 따라 유연하게 동작하는 구조예요.
       </p>
       <p>
-        기존 A~C유형과는 다르게, 디테일한 구성과 수치 조정이 중요하기 때문에
+        기존 A~C 유형과는 다르게, 디테일한 구성과 수치 조정이 중요하기 때문에
         샘플 PDF를 꼭 참고하시고, 픽셀 단위도 정확히 작업해주셔야 합니다. 이번
         유형은 난이도가 살짝 올라가지만, 그만큼 실무에서 많이 쓰이는 구조라서 꼭
         연습해두시면 좋아요! 그럼 바로 시작해볼까요? 집중해서! 꼼꼼하게! 렛츠
@@ -19,11 +19,11 @@ export default function Webdesign13() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 D-1.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutD-1.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 D-1으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 D-1으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -32,7 +32,7 @@ export default function Webdesign13() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 D-1</title>
+    <title>웹디자인개발기능사 레이아웃 D-1</title>
 </head>
 <body>
     
@@ -263,31 +263,81 @@ export default function Webdesign13() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        D유형에서는 반응형 레이아웃이 처음 등장하며, 실제 웹사이트 제작에서 매우
-        중요한 개념들을 연습할 수 있습니다. 이번 유형의 핵심은 다음과 같습니다:
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <strong>flex + calc 조합:</strong> 고정 영역(aside)과 가변
-          영역(main)의 조합을 <code>width: calc(100% - 200px)</code>으로
-          처리합니다.
+          <code>&lt;aside&gt;</code> : 고정된 왼쪽 메뉴 영역입니다. 로고나
+          내비게이션이 들어갑니다.
         </li>
         <li>
-          <strong>position 속성:</strong> 슬라이드 위에 링크 배너를 올리기 위해
-          <code>absolute</code>와 <code>relative</code>의 관계를 이해해야
-          합니다.
+          <code>&lt;main&gt;</code> : 슬라이드, 배너, 콘텐츠 등 주요 콘텐츠가
+          포함되는 영역입니다.
         </li>
         <li>
-          <strong>레이아웃 구조:</strong> aside → main(slider, banner, contents)
-          → footer의 구조를 전체 감싸는 wrap으로 정리합니다.
+          <code>&lt;article&gt;</code> : 슬라이드와 배너처럼 독립적인 콘텐츠
+          블록에 사용되었습니다.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 공지사항 등 일반 콘텐츠 그룹을 표현할
+          때 사용됩니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트의 하단 정보를 담는 영역이며,
+          3분할로 구성됩니다.
         </li>
       </ul>
-      <p>
-        특히 <code>calc()</code>는 가변 레이아웃을 설계할 때 매우 유용하며, 수치
-        연산이 가능하기 때문에 다양한 크기 조정에 활용됩니다. 앞으로 실무에서도
-        자주 사용될 수 있으니 꼭 익혀두세요! 😉
-      </p>
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 가로 정렬을 위해 <code>#wrap</code>과{' '}
+          <code>#footer</code>에 사용되었습니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 200px)</code> → 고정 너비를 제외한 나머지
+          공간을 자동 계산하여 반응형 레이아웃을 구현합니다.
+        </li>
+        <li>
+          <code>position: relative</code> + <code>absolute</code> → 슬라이드
+          위에 링크 배너를 정확한 위치에 배치할 때 사용합니다.
+        </li>
+        <li>
+          <code>background-color</code> → 구조 시각화를 위해 각 영역별 배경색을
+          다르게 지정했습니다.
+        </li>
+      </ul>
+      <h5>✅ position 속성 정리</h5>
+      <ul>
+        <li>
+          <code>position: relative</code> → 기준점을 설정합니다. 자식 요소가{' '}
+          <code>absolute</code>일 때 이 요소를 기준으로 배치됩니다.
+        </li>
+        <li>
+          <code>position: absolute</code> → 부모 중 <code>relative</code>가
+          설정된 요소를 기준으로 원하는 위치에 자유롭게 배치합니다.
+        </li>
+        <li>
+          예를 들어, 슬라이드 영역 위에 배너를 고정할 때는 슬라이드 박스에{' '}
+          <code>relative</code>, 배너에 <code>absolute</code>를 적용해 위치를
+          지정합니다.
+        </li>
+      </ul>
+
+      <h5>✅ calc() 함수 정리</h5>
+      <ul>
+        <li>
+          <code>calc()</code>는 CSS에서 <strong>값을 계산</strong>하여 유동적인
+          레이아웃을 구성할 수 있게 해주는 함수입니다.
+        </li>
+        <li>
+          이번 실습에서는 고정된 <code>aside</code> 영역(200px)을 제외한 나머지
+          영역을 계산하기 위해 <code>width: calc(100% - 200px)</code>을
+          사용했습니다.
+        </li>
+        <li>
+          주의사항 : <strong>연산 기호 앞뒤에 반드시 공백</strong>을 넣어야
+          합니다. 예: <code>calc(100% - 200px)</code>
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

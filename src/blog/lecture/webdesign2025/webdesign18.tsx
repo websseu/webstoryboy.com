@@ -20,11 +20,11 @@ export default function Webdesign18() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 E-2.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutE-2.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 E-2으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 E-2으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -33,7 +33,7 @@ export default function Webdesign18() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 E-2</title>
+    <title>웹디자인개발기능사 레이아웃 E-2</title>
 </head>
 <body>
     
@@ -238,19 +238,69 @@ export default function Webdesign18() {
       />
 
       <h4>3. 정리</h4>
-      <p>
-        E-2 유형은 기본적으로 E-1과 구조는 동일하지만, 화면 높이(vh) 기준이 아닌
-        임의의 픽셀 값으로 높이를 설정하는 것이 가장 큰 차이점입니다. 특히 main,
-        header, contents, slider, footer 영역 각각에 고정된 height 값을 주어야
-        하며, 콘텐츠 영역 내부의 구조도 명확하게 나누어 작업해야 안정적인
-        레이아웃을 구현할 수 있습니다. 이번 유형에서도 중요한 포인트는 calc()
-        함수 사용입니다:
-      </p>
-      <p>
-        width: calc(100% - 600px); 이렇게 작성하면 슬라이드 영역이 나머지 공간을
-        자동으로 채우도록 만들 수 있어, 화면 크기가 변해도 전체 레이아웃이
-        자연스럽게 대응할 수 있습니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
+      <ul>
+        <li>
+          <code>&lt;main&gt;</code> : 전체 콘텐츠를 감싸는 영역으로 header,
+          contents, slider로 구성됩니다.
+        </li>
+        <li>
+          <code>&lt;header&gt;</code> : 로고와 내비게이션이 들어가는 왼쪽 고정
+          영역입니다.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 콘텐츠 그룹을 구성하며, 공지사항,
+          갤러리, 링크를 포함합니다.
+        </li>
+        <li>
+          <code>&lt;article&gt;</code> : 슬라이드 영역을 담당하며 가변 너비로
+          설정됩니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 정보를 나타내며 3분할 구조로
+          구성됩니다.
+        </li>
+      </ul>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>height: 750px</code> → E-1과 달리 <strong>고정 픽셀값</strong>
+          으로 전체 높이를 지정했습니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 600px)</code> → 슬라이드 영역이 남는 공간을
+          자동으로 채우게 설정합니다.
+        </li>
+        <li>
+          <code>display: flex</code> → <code>#main</code>, <code>#footer</code>{' '}
+          등에 적용하여 가로 정렬을 구현합니다.
+        </li>
+        <li>
+          <code>background-color</code> → 각 영역을 시각적으로 구분하기 위해
+          사용했습니다.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          고정 높이 레이아웃 구현에 집중했습니다. 전체적으로 픽셀 단위로 정확한
+          레이아웃을 구성했습니다.
+        </li>
+        <li>
+          <code>calc()</code>를 활용해 가변 슬라이드 영역을 구성하는 방법을
+          복습했습니다.
+        </li>
+        <li>
+          콘텐츠 영역은 세 개의 고정 박스로 나누고, <code>height</code>로 정밀
+          제어해 안정적인 레이아웃을 만들었습니다.
+        </li>
+        <li>
+          <code>display: flex</code>를 통해 좌우 영역 정렬과 푸터의 3분할 구조를
+          손쉽게 구현했습니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

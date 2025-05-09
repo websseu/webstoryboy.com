@@ -17,11 +17,11 @@ export default function Webdesign17() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 E-1.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutE-1.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 E-1으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 E-1으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -30,7 +30,7 @@ export default function Webdesign17() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 E-1</title>
+    <title>웹디자인개발기능사 레이아웃 E-1</title>
 </head>
 <body>
     
@@ -252,39 +252,129 @@ export default function Webdesign17() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        E-1 유형은 반응형 레이아웃 구성에서 매우 중요한 개념들을 연습할 수 있는
-        구조입니다. 특히 이번 실습에서 핵심이 되는 부분은{' '}
-        <strong>가변값과 고정값을 함께 활용하는 방식</strong>입니다.
-      </p>
-      <p>
-        그중에서도 가장 중요한 개념은 바로 <code>calc()</code> 함수입니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <code>calc()</code>는 CSS에서{' '}
-          <strong>다양한 단위를 조합해서 연산할 수 있게 해주는 함수</strong>
-          입니다.
+          <code>&lt;main&gt;</code> : 전체 콘텐츠를 담는 주요 영역입니다.
+          header, contents, slider로 구성되어 있습니다.
         </li>
         <li>
-          예를 들어 <code>width: calc(100% - 600px)</code>은 전체 너비(100%)에서
-          고정값(600px)을 뺀 나머지 공간을 차지하게 합니다.
+          <code>&lt;header&gt;</code> : 로고와 내비게이션이 포함된 좌측 고정
+          영역입니다.
         </li>
         <li>
-          <strong>주의할 점</strong>은 연산 기호 양쪽에 반드시 공백을 넣어야
-          한다는 것입니다.
-          <br /> 예시: <code>calc(100% - 200px)</code> ← 공백 필수!
+          <code>&lt;section&gt;</code> : 콘텐츠 그룹을 구성하는 영역으로,
+          배너/공지사항/갤러리/링크 등 4개의 하위 요소를 포함합니다.
+        </li>
+        <li>
+          <code>&lt;article&gt;</code> : 슬라이드 및 각 콘텐츠 박스를 개별
+          블록으로 정의할 때 사용됩니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 정보 영역으로 2단 구조(1차
+          분할 + 2차 중첩)로 구성됩니다.
         </li>
       </ul>
-      <p>
-        또한, <strong>세로 높이를 화면에 맞추는</strong> 부분에서도{' '}
-        <code>height: calc(100vh - 120px)</code> 같은 방식으로 화면 전체
-        높이에서 푸터 높이를 제외해 main 영역을 딱 맞게 설정할 수 있습니다.
-      </p>
-      <p>
-        이런 방식은 <strong>실제 반응형 웹사이트 레이아웃 구현</strong>에 매우
-        자주 활용되므로, 꼭 익숙해지셔야 합니다 💡
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>height: calc(100vh - 120px)</code> → 화면 전체 높이에서
+          푸터(120px)를 제외한 메인 영역 높이를 설정합니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 600px)</code> → 고정 영역(header 200px +
+          contents 400px)을 제외한 나머지 영역을 유동적으로 설정합니다.
+        </li>
+        <li>
+          <code>display: flex</code> → 가로 정렬 및 복수의 블록 배치를 위해
+          사용됩니다. <code>#main</code>, <code>#footer</code> 등에 적용됩니다.
+        </li>
+        <li>
+          <code>background-color</code> → 각 영역의 구조를 시각적으로 파악할 수
+          있도록 색상 구분을 적용했습니다.
+        </li>
+        <li>
+          <code>height: %</code> → 콘텐츠 내부 영역은 화면 비율에 맞춰 높이를
+          설정하였습니다 (예: 15%, 35%).
+        </li>
+      </ul>
+
+      <h5>✅ 자주 사용하는 CSS 단위 정리</h5>
+      <ul>
+        <li>
+          <code>px</code> (픽셀) : <strong>고정 크기</strong> 단위입니다.
+          디바이스의 해상도나 화면 크기와 관계없이 항상 일정한 크기를
+          유지합니다.
+          <br />
+          예) <code>width: 200px</code>
+        </li>
+        <li>
+          <code>%</code> (퍼센트) : <strong>부모 요소 기준</strong>으로 비율을
+          지정할 때 사용합니다. 반응형 레이아웃에서 자주 사용됩니다.
+          <br />
+          예) <code>width: 100%</code>
+        </li>
+        <li>
+          <code>vh</code> (viewport height) :{' '}
+          <strong>브라우저 화면 높이의 1%</strong>를 의미합니다. 전체 화면
+          기준의 높이 설정에 유용합니다.
+          <br />
+          예) <code>height: 100vh</code> → 전체 화면 높이
+        </li>
+        <li>
+          <code>vw</code> (viewport width) :{' '}
+          <strong>브라우저 화면 너비의 1%</strong>를 의미합니다.
+          <br />
+          예) <code>width: 100vw</code>
+        </li>
+        <li>
+          <code>em</code> : <strong>부모 요소의 폰트 크기</strong>를 기준으로
+          상대적인 크기를 지정합니다.
+          <br />
+          예) <code>padding: 2em</code> → 부모 폰트 크기의 2배
+        </li>
+        <li>
+          <code>rem</code> : <strong>루트(html)의 폰트 크기</strong>를 기준으로
+          상대적인 크기를 지정합니다.
+          <br />
+          예) <code>font-size: 1.5rem</code> → 기본 폰트 크기의 1.5배
+        </li>
+        <li>
+          <code>calc()</code> : 서로 다른 단위를{' '}
+          <strong>연산하여 혼합 사용</strong>할 수 있게 해줍니다.
+          <br />
+          예) <code>width: calc(100% - 200px)</code>
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          <strong>
+            <code>calc()</code> 활용법
+          </strong>
+          을 이해하고 연습했습니다. 고정값과 유동값을 조합하여 반응형 구조를
+          만드는 핵심 기술입니다.
+        </li>
+        <li>
+          <strong>화면 높이 계산</strong>을 위해 <code>100vh</code>에서 고정값을
+          뺀 세로 계산식을 적용했습니다.
+        </li>
+        <li>
+          <strong>flexbox</strong>를 사용하여 header, contents, slider의 좌우
+          배치를 구성하고, footer의 내부 중첩 구조도 유연하게 구현했습니다.
+        </li>
+        <li>
+          <strong>퍼센트 단위의 높이 분할</strong>을 통해 contents 영역 내
+          콘텐츠를 비율로 배치하는 방법을 연습했습니다.
+        </li>
+        <li>
+          <strong>레이아웃 시각화</strong>를 위한 <code>background-color</code>{' '}
+          지정으로 영역을 빠르게 구분할 수 있었습니다.
+        </li>
+      </ul>
+
       <h4>4. 마무리</h4>
       <p>
         자, 이렇게 해서 드디어 E유형의 첫 번째 레이아웃도 완성되었습니다! 🎉

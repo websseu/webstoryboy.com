@@ -15,11 +15,11 @@ export default function Webdesign12() {
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 C-4.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutC-4.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 C-4으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 C-4으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -28,7 +28,7 @@ export default function Webdesign12() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 C-4</title>
+    <title>웹디자인개발기능사 레이아웃 C-4</title>
 </head>
 <body>
     
@@ -216,32 +216,60 @@ export default function Webdesign12() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        C-4 유형도 기존 C유형들과 전반적인 <strong>레이아웃 구조는 동일</strong>
-        하지만,
-        <strong>푸터 부분에서만 차이점</strong>이 있었습니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          전체 구조는 <code>#wrap</code> 안에 <code>#aside</code>와{' '}
-          <code>#main</code>을 flex로 좌우 배치하고,
-          <code>#main</code> 안에 <code>#slider</code>, <code>#contents</code>,{' '}
-          <code>#footer</code>를 세로로 정렬했습니다.
+          <code>&lt;aside&gt;</code> : 좌측 고정 사이드 영역으로 메뉴나 로고
+          배치에 사용됩니다.
         </li>
         <li>
-          푸터는 <strong>3개의 자식 박스</strong>로 나뉘며 각각 20%, 60%, 20%
-          비율로 나누어 구성하였습니다.
+          <code>&lt;main&gt;</code> : 주요 콘텐츠를 포함하는 메인 레이아웃
+          영역입니다.
         </li>
         <li>
-          각 구조별로 height, background-color를 지정하여 시각적으로 쉽게 확인할
-          수 있도록 했습니다.
+          <code>&lt;article&gt;</code> : 독립적인 콘텐츠 블록, 예: 슬라이더
+          영역에 사용됩니다.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 관련 콘텐츠 묶음을 표현합니다. 콘텐츠
+          영역에서 사용되었습니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단의 정보나 추가 콘텐츠를
+          배치하는 영역입니다.
         </li>
       </ul>
-      <p>
-        반복되는 연습을 통해 이제는 박스를 나누고 비율을 조절하는 게
-        자연스러워졌을 거예요. 이런 레이아웃 감각은{' '}
-        <strong>실무에서도 그대로 활용</strong>될 수 있으니 꼭 익혀두세요!
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 수평 정렬을 위해 <code>#wrap</code>,{' '}
+          <code>#contents</code>, <code>#footer</code>에 적용되었습니다.
+        </li>
+        <li>
+          <code>width</code>, <code>height</code> → 각 박스의 크기를 정확히
+          설정하여 레이아웃 분할을 구현했습니다.
+        </li>
+        <li>
+          <code>background-color</code> → 각 영역의 시각적 구분을 위해 컬러를
+          설정해 레이아웃 구조를 쉽게 파악하도록 했습니다.
+        </li>
+      </ul>
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          C유형의 마지막 예제로, 기존 구조를 복습하며 푸터 3분할 레이아웃을
+          새롭게 적용해보았습니다.
+        </li>
+        <li>
+          <code>20% / 60% / 20%</code>로 나뉜 푸터 구조를 통해 비율 조절과 Flex
+          정렬 방식을 실습했습니다.
+        </li>
+        <li>
+          이제는 구조 작성과 박스 나누기가 익숙해졌으며, 실무에서도 유용한
+          레이아웃 감각을 습득하게 되었습니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

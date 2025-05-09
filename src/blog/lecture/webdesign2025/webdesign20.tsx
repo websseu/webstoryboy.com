@@ -19,11 +19,11 @@ export default function Webdesign20() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 E-4.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutE-4.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 E-4으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 E-4으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -32,7 +32,7 @@ export default function Webdesign20() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 E-4</title>
+    <title>웹디자인개발기능사 레이아웃 E-4</title>
 </head>
 <body>
     
@@ -233,21 +233,21 @@ export default function Webdesign20() {
         language='css'
         code={`#footer {
     width: 100%;
+    height: 120px;
     display: flex;
-    flex-wrap: wrap;
 }
 #footer .footer1 {
-    width: 20%;
+    width: 200px;
     height: 120px;
     background-color: #a3a3a3;
 }
 #footer .footer2 {
-    width: calc(100% - 400px);
+    width: calc(100% - 500px);
 }
 #footer .footer2 .footer2-1 {
     width: 100%;
     height: 60px;
-    background-color: #9d9d9d
+    background-color: #9d9d9d;
 }
 #footer .footer2 .footer2-2 {
     width: 100%;
@@ -255,27 +255,87 @@ export default function Webdesign20() {
     background-color: #929292;
 }
 #footer .footer3 {
-    width: 200px;
+    width: 300px;
     height: 120px;
     background-color: #838383;
 }`}
       />
 
       <h4>3. 정리</h4>
-      <p>
-        E-4 유형은 실기 시험에서 많이 등장하는 세로 전체 영역 구성의 종합형
-        레이아웃입니다. 이번 유형에서 중요하게 봐야 할 부분은 다음과 같습니다
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
-        <li>calc()을 활용한 유동형 슬라이드 영역 구현</li>
-        <li>퍼센트 기반의 세부 콘텐츠 영역 높이 비율 계산</li>
-        <li>푸터 영역의 복합 구조 (3단 + 내부 2단)</li>
+        <li>
+          <code>&lt;main&gt;</code> : 전체 콘텐츠를 감싸는 영역. header,
+          contents, slider를 포함합니다.
+        </li>
+        <li>
+          <code>&lt;header&gt;</code> : 로고와 내비게이션을 포함한 왼쪽 고정
+          메뉴 영역입니다.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 콘텐츠 영역으로 배너, 공지사항, 갤러리,
+          링크로 구성됩니다.
+        </li>
+        <li>
+          <code>&lt;article&gt;</code> : 슬라이드 영역과 콘텐츠 내부 블록들에
+          사용됩니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 3분할 + 중첩 구조로 되어 있는 사이트
+          하단입니다.
+        </li>
       </ul>
-      <p>
-        특히 width: calc(100% - 고정값) 또는 height: calc(100vh - 고정값)처럼
-        calc()를 통해 고정 + 유동 레이아웃을 조합하는 방식은 실무에서도 자주
-        활용되므로 반드시 익혀두세요!
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>height: calc(100vh - 120px)</code> → 전체 화면 높이에서 푸터
+          높이를 뺀 값을 메인 영역에 지정합니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 600px)</code> → 고정된 header(200px) +
+          contents(400px)를 제외한 슬라이드 영역을 유동적으로 만듭니다.
+        </li>
+        <li>
+          <code>height: 퍼센트(%)</code> → 콘텐츠 영역 내부는 비율 기반으로
+          높이를 설정하여 유연하게 구성됩니다.
+        </li>
+        <li>
+          <code>background-color</code> → 구조 파악과 디버깅을 위한 임시
+          색상으로 각 영역을 구분합니다.
+        </li>
+      </ul>
+
+      <h5>✅ flex 속성 정리</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → <code>#main</code>과 <code>#footer</code>
+          에 적용되어 가로 정렬을 구현합니다.
+        </li>
+        <li>
+          <code>flex-direction</code> → 기본값 <code>row</code>로 좌우 영역
+          정렬. 필요 시 <code>column</code>도 사용 가능
+        </li>
+        <li>
+          <code>justify-content</code>, <code>align-items</code> → 주축 및
+          교차축 정렬 시 사용됩니다.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          <strong>calc()</strong>를 활용한 유동 레이아웃 구현 (가로 및 세로 방향
+          모두 적용)
+        </li>
+        <li>
+          콘텐츠 섹션의 <strong>퍼센트 기반 높이 분할</strong> 방식 숙지
+        </li>
+        <li>
+          푸터의 <strong>3단 + 내부 2단 중첩 레이아웃</strong> 구성 연습
+        </li>
+        <li>섹션 간 구조 차이 파악과 세부 정렬 구조 이해</li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

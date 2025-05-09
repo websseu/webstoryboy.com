@@ -13,11 +13,11 @@ export default function Webdesign14() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 D-2.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutD-2.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 D-2으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 D-2으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -26,7 +26,7 @@ export default function Webdesign14() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 D-2</title>
+    <title>웹디자인개발기능사 레이아웃 D-2</title>
 </head>
 <body>
     
@@ -153,7 +153,7 @@ export default function Webdesign14() {
 }
 #aside .nav {
     width: 100%;
-    height: 750px;
+    height: 550px;
     background-color: #e3e3e3;
 }`}
       />
@@ -244,33 +244,102 @@ export default function Webdesign14() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>D-2 유형의 핵심 포인트를 다시 한 번 정리해볼게요.</p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <strong>
-            <code>calc(100% - 200px)</code>
-          </strong>
-          을 사용하여 고정 사이드바(200px)와 유동적인 메인 영역의 조합을
-          구현했습니다.
+          <code>&lt;aside&gt;</code> : 고정된 왼쪽 메뉴 영역입니다. 로고와
+          내비게이션 메뉴가 들어갑니다.
         </li>
         <li>
-          <strong>슬라이드 영역</strong>은 두 영역으로 나눠져 있으며,
-          <code>.image</code>와 <code>.banner</code>를 flex로 수평 정렬하여
-          구성했습니다.
+          <code>&lt;main&gt;</code> : 슬라이드, 배너, 콘텐츠 등 주요 콘텐츠가
+          포함된 영역입니다.
         </li>
         <li>
-          <strong>컨텐츠 영역</strong>은 50%씩 나뉜 두 개의 박스로 구성되어
-          있으며, 반응형 구조에서도 잘 유지되도록 유연하게 설정되었습니다.
+          <code>&lt;article&gt;</code> : 슬라이드와 배너처럼 독립적인 콘텐츠
+          블록을 표현할 때 사용됩니다.
         </li>
         <li>
-          <strong>푸터 영역</strong>은 세 부분으로 나눠서 각각 20%, 60%, 20%로
-          균형 있게 배치했습니다.
+          <code>&lt;section&gt;</code> : 공지사항 등 일반적인 콘텐츠 그룹을
+          구성할 때 사용됩니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 정보를 담는 영역이며, 3분할
+          구조로 되어 있습니다.
         </li>
       </ul>
-      <p>
-        이번 유형도 실무에서 많이 쓰이는 레이아웃 구조이니, 반복해서
-        연습해보세요! 🙌
-      </p>
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 수평 배치를 위해 <code>#wrap</code>,
+          <code>#footer</code> 등에 사용됩니다.
+        </li>
+        <li>
+          <code>flex-wrap: wrap</code> → flex 항목들이 한 줄에 다 들어가지 않을
+          경우 줄 바꿈을 가능하게 해줍니다. <code>#wrap</code>에 적용되어
+          footer가 다음 줄에 배치됩니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 200px)</code> → 고정된 <code>aside</code>
+          너비(200px)를 제외한 가변 영역을 계산하여 반응형 구현에 활용됩니다.
+        </li>
+        <li>
+          <code>position: relative</code> + <code>absolute</code> → 슬라이드
+          위에 링크 배너를 올릴 때 정확한 위치 설정을 위해 사용됩니다.
+        </li>
+        <li>
+          <code>background-color</code> → 각 영역을 시각적으로 구분하기 위해
+          다른 색상으로 지정하였습니다.
+        </li>
+      </ul>
+      <h5>✅ flex 속성 정리</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 부모 요소에 적용하여 자식 요소들을 가로
+          방향(기본값) 으로 정렬합니다.
+        </li>
+        <li>
+          <code>flex-direction</code> → 정렬 방향을 지정합니다. 기본값은
+          <code>row</code> (가로 정렬), 세로 정렬은 <code>column</code>을
+          사용합니다.
+        </li>
+        <li>
+          <code>justify-content</code> → 주축(가로축 기준)에서 자식 요소들의
+          정렬 위치를 설정합니다. (예: <code>center</code>,
+          <code>space-between</code>)
+        </li>
+        <li>
+          <code>align-items</code> → 교차축(세로축 기준)에서 자식 요소들의 정렬
+          방식을 설정합니다.
+        </li>
+        <li>
+          <code>flex-wrap</code> → 자식 요소가 한 줄을 초과할 경우 자동 줄 바꿈
+          여부를 결정합니다. <code>wrap</code>을 설정하면 다음 줄로 넘어갑니다.
+        </li>
+        <li>
+          실습에서는 <code>#wrap</code>과 <code>#footer</code>에 flex 속성이
+          적용되어 가로 정렬과 레이아웃 분할에 사용되었습니다.
+        </li>
+      </ul>
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          반응형 레이아웃 구현을 위한 <code>calc()</code>
+          사용법을 익혔습니다. 고정 사이드바와 가변 메인 영역의 조합이
+          포인트입니다.
+        </li>
+        <li>
+          <code>position: relative</code>와 <code>absolute</code>를 활용해
+          요소를 원하는 위치에 정확하게 배치하는 방법을 연습했습니다.
+        </li>
+        <li>
+          <code>display: flex</code>와 <code>flex-wrap</code>을 조합해 가로 정렬
+          + 줄바꿈 처리가 가능한 구조를 만들었습니다.
+        </li>
+        <li>
+          시각적 레이아웃 파악을 돕기 위해 <code>background-color</code>를 각
+          박스마다 지정하여 구조 시각화 연습도 함께 진행했습니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

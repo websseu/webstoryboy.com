@@ -16,11 +16,11 @@ export default function Webdesign19() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 E-3.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign 폴더 안에 layoutE-3.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 E-3으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 E-3으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -29,7 +29,7 @@ export default function Webdesign19() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 E-3</title>
+    <title>웹디자인개발기능사 레이아웃 E-3</title>
 </head>
 <body>
     
@@ -234,19 +234,69 @@ export default function Webdesign19() {
       />
 
       <h4>3. 정리</h4>
-      <p>
-        E-3 유형은 E-2 유형과 거의 동일한 구조로 이루어져 있습니다. 단지 링크
-        영역이 ‘배너’로 바뀐 것만 다르기 때문에 이전 유형을 이해하고 있다면
-        어렵지 않게 완성할 수 있어요.
-      </p>
-      <p>
-        {' '}
-        이번 연습을 통해 다음을 정리해볼 수 있습니다: main과 footer의 2단 구조
-        이해 width: calc(100% - 값)을 활용한 반응형 레이아웃 구현 각 콘텐츠
-        영역의 고정 높이 설정 및 구조 구성 비슷한 유형에서 변경된 요소만 빠르게
-        파악하는 능력 레이아웃 실력을 한 단계 끌어올리기 좋은 반복 학습
-        유형입니다. 🎯
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
+      <ul>
+        <li>
+          <code>&lt;main&gt;</code> : header, contents, slider로 구성된 메인
+          영역입니다.
+        </li>
+        <li>
+          <code>&lt;header&gt;</code> : 좌측 로고와 내비게이션 영역으로 고정
+          폭을 갖습니다.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 배너, 공지사항, 갤러리 등 콘텐츠 그룹을
+          구성합니다.
+        </li>
+        <li>
+          <code>&lt;article&gt;</code> : 슬라이드 및 콘텐츠 내 개별 블록에
+          사용되었습니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 하단 정보 영역으로 3분할 구조를
+          가집니다.
+        </li>
+      </ul>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>height: 750px</code> → 고정된 전체 높이를 지정하여 안정적인
+          레이아웃을 구현합니다.
+        </li>
+        <li>
+          <code>width: calc(100% - 600px)</code> → 고정 영역을 제외한 나머지
+          영역을 유동적으로 계산해줍니다.
+        </li>
+        <li>
+          <code>display: flex</code> → 가로 정렬 및 분할 레이아웃 구성에
+          활용됩니다.
+        </li>
+        <li>
+          <code>background-color</code> → 각 박스를 구분하고 구조를 파악하기
+          쉽게 도와줍니다.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          E-2 유형과 거의 동일한 구조로, 작은 변경 요소(링크 → 배너)를 정확히
+          파악하는 능력을 키울 수 있습니다.
+        </li>
+        <li>
+          <code>calc()</code>를 활용하여 유동 영역(slider)을 반응형으로 설계하는
+          방법을 복습했습니다.
+        </li>
+        <li>
+          고정 높이 기반 레이아웃 구성 능력을 반복 학습하며 더욱 강화할 수
+          있습니다.
+        </li>
+        <li>
+          유형 간 유사성과 차이점을 분석하고 빠르게 파악하는 연습이 중요한 학습
+          포인트입니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>
