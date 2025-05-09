@@ -11,8 +11,6 @@ export default function Webdesign04() {
       <p>
         이번 A-4 유형도 A-3 유형과 구조는 거의 같습니다. 단지 푸터 영역의 배치
         방식만 약간 다를 뿐, 전체적인 틀은 동일하다고 생각하시면 됩니다.
-      </p>
-      <p>
         이제까지 여러 유형을 함께 만들어봤으니, 이번에는 스스로 먼저 도전해보고
         완성한 뒤에 저와 함께 코드를 비교하며 확인하는 방식을 추천드립니다. ✨
         직접 해보면서 어떤 부분이 달랐는지, 어떤 부분은 잘 따라갔는지 체크해보는
@@ -22,11 +20,11 @@ export default function Webdesign04() {
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 A-4.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutA-4.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 A-3으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 A-3으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -35,7 +33,7 @@ export default function Webdesign04() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 A-4</title>
+    <title>웹디자인개발기능사 레이아웃 A-4</title>
 </head>
 <body>
     
@@ -119,7 +117,7 @@ export default function Webdesign04() {
         language='html'
         code={`<div id="header">
     <h1 class="logo"></h1>
-    <div class="nav"></div>
+    <nav class="nav"></nav>
 </div>
 <!-- //header -->`}
       />
@@ -164,11 +162,11 @@ export default function Webdesign04() {
       </p>
       <CodeBlock
         language='html'
-        code={`<div id="contents">
+        code={`<main id="contents">
     <section class="content1"></section>
     <section class="content2"></section>
     <section class="content3"></section>
-</div>
+</main>
 <!-- //contents -->`}
       />
       <CodeBlock
@@ -236,37 +234,81 @@ export default function Webdesign04() {
       />
 
       <h4>3. 정리</h4>
-      <h5>
-        이번 A-4 유형에서는 지금까지 배운 레이아웃 구성 방법을
-        총정리해보았습니다.
-      </h5>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
-        <li>wrap: 전체 레이아웃을 감싸는 부모 요소로 사용합니다. (div#wrap)</li>
+        <li>&lt;div&gt; : 기본 블록 요소. 의미 없는 구조 구분에 사용.</li>
         <li>
-          header: 사이트의 상단 영역으로 로고와 네비게이션을 포함합니다. Flex를
-          사용하여 가로 정렬했습니다.
+          &lt;header&gt; : 페이지나 섹션의 상단 영역. 보통 로고, 메뉴 등을 포함.
         </li>
         <li>
-          slider: 주요 비주얼이나 슬라이드 영역을 나타냅니다. 의미에 따라
-          article 또는 section 태그를 사용할 수 있습니다.
+          &lt;nav&gt; : 주요 내비게이션 링크를 포함하는 영역. header 내부 또는
+          독립 사용.
         </li>
         <li>
-          contents: 메인 콘텐츠 영역입니다. 이번에는 3개의 section으로 나누어
-          작업했습니다.
+          &lt;main&gt; : 문서의 중심 콘텐츠를 감싸는 태그. 페이지당 1회 사용
+          권장.
         </li>
         <li>
-          footer: 사이트의 하단 영역입니다. A-4 유형에서는 2단 구조(왼쪽: 메뉴,
-          오른쪽: 기타 영역)로 구성했습니다.
+          &lt;section&gt; : 주제별 묶음. 반복되는 독립 콘텐츠를 나눌 때 사용.
+        </li>
+        <li>
+          &lt;article&gt; : 독립적인 게시물 단위. 의미에 따라 슬라이드 영역
+          등에서 활용 가능.
+        </li>
+        <li>
+          &lt;footer&gt; : 페이지 또는 섹션의 하단 영역. 정보, 메뉴, 카피라이트
+          등 포함.
         </li>
       </ul>
-      <p>
-        특히 이번에는 푸터 구조가 기존 A-3 유형과 살짝 달랐죠? 하나의 영역 안에
-        다시 2개의 하위 박스를 배치하는 방법을 연습해봤습니다.
-      </p>
-      <p>
-        또한, 의미에 맞게 시멘틱 태그를 활용하는 것, 레이아웃 배치를 위해 flex를
-        적극적으로 사용하는 것도 중요한 포인트였어요. ✅
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 가로 배치를 위한 핵심 속성. header,
+          contents, footer 등 레이아웃에 적용.
+        </li>
+        <li>
+          <code>margin: 0 auto</code> → 전체 페이지 중앙 정렬. wrap에 적용.
+        </li>
+        <li>
+          <code>width</code>, <code>height</code> → 각 영역의 크기 지정. 시각적
+          구조 확인에 필수.
+        </li>
+        <li>
+          <code>background-color</code> → 영역 구분 확인용 색상 설정. 연습 시
+          가시성 확보.
+        </li>
+      </ul>
+
+      <h5>✅ 구조 설계 포인트</h5>
+      <ul>
+        <li>
+          <code>#wrap</code> : 전체 레이아웃을 감싸는 메인 컨테이너 역할.
+        </li>
+        <li>
+          <code>#header</code>, <code>#slider</code>, <code>#contents</code>,{' '}
+          <code>#footer</code> : 시멘틱 구조별 주요 영역.
+        </li>
+        <li>
+          푸터 내부에 다시 2단, 혹은 2중 구조를 구성하며 복잡한 레이아웃을
+          나누는 연습 진행.
+        </li>
+        <li>
+          의미를 고려한 태그 선택 → 꼭 정해진 답이 있는 건 아니며, 의미 전달이
+          핵심.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>A유형의 마지막 단계로서 전체 구조를 종합 복습하는 실습.</li>
+        <li>슬라이드, 콘텐츠, 푸터 등 각 구조를 반복하면서 익숙해지는 과정.</li>
+        <li>시멘틱 태그의 의미 파악 + CSS flex 활용 능력 향상.</li>
+        <li>
+          복잡한 레이아웃도 <code>div</code>와 <code>flex</code> 조합으로 충분히
+          구현 가능함을 체험.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>A-4 유형까지 완성하신 여러분, 정말 잘 해주셨습니다! 🥳</p>

@@ -5,22 +5,22 @@ export default function Webdesign09() {
     <>
       <h3>소개</h3>
       <p>안녕하세요! 웹스토리보이입니다 😊</p>
-      <p>이번에는 C유형 레이아웃을 함께 만들어보겠습니다.</p>
       <p>
-        C유형은 2000년대 초반에 많이 사용되던 구조로, 가운데 정렬이 아닌 왼쪽
-        정렬 방식으로 구성된 것이 특징입니다. 사이트 전체가 왼쪽에 고정되고, 그
-        안에 콘텐츠들이 배치되는 구조죠. 이 레이아웃은 2023년 버전 개정 전에
-        사용되던 방식이라 최근 레이아웃들에 비해 비교적 단순하고 쉬운 편이에요.
+        이번에는 C유형 레이아웃을 함께 만들어보겠습니다. C유형은 2000년대 초반에
+        많이 사용되던 구조로, 가운데 정렬이 아닌 왼쪽 정렬 방식으로 구성된 것이
+        특징입니다. 사이트 전체가 왼쪽에 고정되고, 그 안에 콘텐츠들이 배치되는
+        구조죠. 이 레이아웃은 2023년 버전 개정 전에 사용되던 방식이라 최근
+        레이아웃들에 비해 비교적 단순하고 쉬운 편이에요.
       </p>
       <p>그럼 빠르게 정리하고, 다음 D유형으로 넘어가볼게요! 렛츠 기릿! 💨</p>
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 C-1.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutC-1.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 C-1으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 C-1으로 변경해주겠습니다.
       </p>
 
       <CodeBlock
@@ -30,7 +30,7 @@ export default function Webdesign09() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 C-1</title>
+    <title>웹디자인개발기능사 레이아웃 C-1</title>
 </head>
 <body>
     
@@ -230,29 +230,74 @@ export default function Webdesign09() {
       />
 
       <h4>3. 정리</h4>
-      <p>
-        C유형은 과거에 많이 사용되던 <strong>왼쪽 정렬 기반의 레이아웃</strong>
-        으로, 최근의 반응형 레이아웃과는 구조가 다소 단순하고 고정적인 편입니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          전체 구조는 <code>aside</code>와 <code>main</code> 두 영역으로 나뉘며,
-          <strong>flex를 활용해 수평 배치</strong>되었습니다.
+          <code>&lt;aside&gt;</code> : 사이드바 역할을 하며, 보통 좌측 고정
+          메뉴에 사용됩니다.
         </li>
         <li>
-          <code>main</code> 안에는 <code>slider</code>, <code>contents</code>,
-          <code>footer</code> 순으로 구성됩니다.
+          <code>&lt;main&gt;</code> : 문서의 주요 콘텐츠 영역을 감싸는 태그로,
+          한 문서에 한 번만 사용합니다.
         </li>
         <li>
-          <code>contents</code>는 3등분된 박스 형태로 구성했고,
-          <code>footer</code>는 <strong>2단 구조 + 중첩된 2단</strong> 구조를
-          사용했습니다.
+          <code>&lt;article&gt;</code> : 독립적인 콘텐츠 단위(예: 슬라이더 등)에
+          사용됩니다.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 주제별로 묶이는 콘텐츠 그룹을
+          나타냅니다.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 페이지의 하단 정보를 구성하는
+          영역입니다.
         </li>
       </ul>
-      <p>
-        이 구조는 과거 고정형 레이아웃에 많이 사용되었지만, 여전히 기본기를
-        익히기엔 좋은 예제입니다. 특히 flex 구조에 익숙해지기 딱 좋아요!
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 요소들을 가로로 정렬할 때 사용.{' '}
+          <code>#wrap</code>과 <code>#contents</code>, <code>#footer</code>에
+          적용됨.
+        </li>
+        <li>
+          <code>width</code> → 전체 또는 일부 영역의 너비를 지정. 퍼센트(%)로
+          비율 조절 가능.
+        </li>
+        <li>
+          <code>height</code> → 각 섹션의 높이를 설정해 전체 구조를 시각적으로
+          구분.
+        </li>
+        <li>
+          <code>background-color</code> → 각 영역의 배경색을 지정해 구조 확인을
+          쉽게 함.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          C유형은 <strong>왼쪽 정렬 방식</strong>으로 구성된 고정형
+          레이아웃입니다.
+        </li>
+        <li>
+          <code>aside</code> + <code>main</code>을 사용해 양옆 배치를 구성하고,{' '}
+          <code>display: flex</code>를 통해 수평 정렬을 구현했습니다.
+        </li>
+        <li>
+          슬라이더, 콘텐츠, 푸터 구조까지 포함하여 전체 웹사이트 구조를 간결하게
+          구성했습니다.
+        </li>
+        <li>
+          푸터는 <strong>2단 → 2중 구조</strong>를 가지며, 하위 박스 분할 연습에
+          좋은 예제였습니다.
+        </li>
+        <li>
+          최근에는 잘 사용되지 않지만, 과거 고정형 웹사이트의 구조를 이해하는 데
+          효과적입니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

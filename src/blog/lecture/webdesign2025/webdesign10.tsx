@@ -14,21 +14,18 @@ export default function Webdesign10() {
       </p>
       <p>
         그래도 이해가 잘 안 될 땐? 👉 검색하거나, 아니면 GTP에게 물어보면 거의
-        다 해결됩니다!
-      </p>
-      <p>
-        HTML이나 CSS 속성은 방법만 알고 있으면 언제든지 필요한 정보는 검색해서
-        찾을 수 있어요. 그러니 모른다고 속상해하지 마세요. 중요한 건 흐름과
-        구조를 이해하는 거예요 💡 자, 그럼 오늘도 힘내서 만들어볼까요? 렛츠
-        기릿! 😣😫😔🥳
+        다 해결됩니다! HTML이나 CSS 속성은 방법만 알고 있으면 언제든지 필요한
+        정보는 검색해서 찾을 수 있어요. 그러니 모른다고 속상해하지 마세요.
+        중요한 건 흐름과 구조를 이해하는 거예요 💡 자, 그럼 오늘도 힘내서
+        만들어볼까요? 렛츠 기릿! 😣😫😔🥳
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 C-2.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutC-2.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 C-2으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 C-2으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -37,7 +34,7 @@ export default function Webdesign10() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 C-2</title>
+    <title>웹디자인개발기능사 레이아웃 C-2</title>
 </head>
 <body>
     
@@ -232,48 +229,77 @@ export default function Webdesign10() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        이번 C-2 유형에서는 이전 C-1과 비슷한 구조지만,
-        <strong>푸터 구조의 배치 순서가 바뀌고, 콘텐츠 구조의 표현 방식</strong>
-        이 조금 달라졌습니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          전체 구조는 <code>#aside</code>와 <code>#main</code>으로 나뉘며,
-          flex를 활용해 수평 정렬을 구현했습니다.
+          <code>&lt;aside&gt;</code> : 좌측 고정 메뉴 또는 보조 콘텐츠 영역.
         </li>
         <li>
-          <code>#main</code> 안에는 <code>#slider</code>, <code>#contents</code>
-          , <code>#footer</code> 순으로 구성되며, 각각 높이와 배경색을 설정해
-          영역을 명확히 구분했습니다.
+          <code>&lt;main&gt;</code> : 주요 콘텐츠 영역을 감싸는 태그.
+        </li>
+        <li>
+          <code>&lt;article&gt;</code> : 독립적인 콘텐츠(슬라이더, 박스 등)에
+          사용.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 콘텐츠 묶음이나 주제 구분 영역.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 영역. 저작권, 링크 등을
+          포함.
         </li>
       </ul>
-      <p>이번 작업에서 사용한 CSS 선택자들에 대해 간단히 정리해볼게요.</p>
+
+      <h5>✅ 주요 CSS 속성</h5>
       <ul>
         <li>
-          <strong>태그 선택자</strong> (예: <code>nav</code>, <code>h1</code>) →
-          태그 이름 그대로 선택. 문서 내 동일한 태그 전체에 스타일 적용됨.
+          <code>display: flex</code> → 수평 정렬을 위해 <code>#wrap</code>,{' '}
+          <code>#contents</code>, <code>#footer</code> 등에 사용.
         </li>
         <li>
-          <strong>클래스 선택자</strong> (예: <code>.footer2</code>,{' '}
-          <code>.content1</code>) → <code>.</code>으로 시작하며, 여러 요소에
-          반복해서 재사용 가능함.
+          <code>width</code>, <code>height</code> → 각 영역의 크기를 설정. 비율
+          또는 고정값 사용 가능.
         </li>
         <li>
-          <strong>아이디 선택자</strong> (예: <code>#wrap</code>,{' '}
-          <code>#main</code>) → <code>#</code>으로 시작하며, 문서 내 한 번만
-          사용하는 고유 식별자.
+          <code>background-color</code> → 각 영역의 배경을 설정하여 시각적으로
+          구분.
         </li>
       </ul>
-      <p>
-        CSS를 작성할 때는 역할에 따라 <strong>id는 구조 잡을 때</strong>,
-        <strong>class는 반복 스타일 처리할 때</strong> 사용하는 것이
-        일반적입니다.
-      </p>
-      <p>
-        이런 선택자들의 개념이 익숙해지면, 이후에도 어떤 요소에 어떤 스타일을
-        적용해야 할지 판단하기가 훨씬 쉬워져요!
-      </p>
+
+      <h5>✅ 선택자 정리</h5>
+      <ul>
+        <li>
+          태그 선택자 (<code>h1</code>, <code>nav</code>) → 동일 태그 전체에
+          스타일 적용.
+        </li>
+        <li>
+          클래스 선택자 (<code>.footer2</code>, <code>.content1</code>) → 반복
+          가능. 여러 요소에 동일 스타일 부여.
+        </li>
+        <li>
+          아이디 선택자 (<code>#main</code>, <code>#wrap</code>) → 유일한 요소
+          식별에 사용. 문서 내 한 번만 사용.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          C-1 유형과 유사하지만, <strong>푸터 배치 순서와 구조</strong>에 변화를
+          준 레이아웃입니다.
+        </li>
+        <li>
+          왼쪽 정렬 구조와 <code>aside + main</code> 구성을 통해 과거 고정형
+          레이아웃을 연습했습니다.
+        </li>
+        <li>
+          <code>display: flex</code>를 통해 가로 정렬 패턴을 반복 숙달했습니다.
+        </li>
+        <li>
+          선택자별 쓰임새(id, class, 태그 선택자)를 구분하고 실제 코드에
+          적용해보았습니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

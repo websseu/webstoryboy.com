@@ -14,11 +14,11 @@ export default function Webdesign11() {
       </p>
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 C-3.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutC-3.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 C-3으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 C-3으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -27,7 +27,7 @@ export default function Webdesign11() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 C-3</title>
+    <title>웹디자인개발기능사 레이아웃 C-3</title>
 </head>
 <body>
     
@@ -204,11 +204,11 @@ export default function Webdesign11() {
     display: flex;
 }
 #footer .footer1 {
-    width: 80%;
+    width: 20%;
     background-color: #838383;
 }
 #footer .footer2 {
-    width: 20%;
+    width: 80%;
 }
 #footer .footer2 .footer2-1 {
     width: 100%;
@@ -222,31 +222,62 @@ export default function Webdesign11() {
 }`}
       />
       <h4>3. 정리</h4>
-      <p>
-        C-3 유형도 앞에서 진행한 C유형들과{' '}
-        <strong>전체적인 구조는 거의 동일</strong>합니다. 그만큼 이번 유형은{' '}
-        <strong>복습 + 응용 연습</strong>의 좋은 기회가 되었을 거예요.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <code>#wrap</code> 안에 <code>#aside</code>와 <code>#main</code>으로
-          수평 구조를 잡고, flex로 배치했습니다.
+          <code>&lt;aside&gt;</code> : 좌측 고정 메뉴에 사용되는 보조 콘텐츠
+          영역.
         </li>
         <li>
-          <code>#main</code> 안에는 <code>#slider</code>, <code>#contents</code>
-          , <code>#footer</code>를 배치했고, 각각의 레이아웃은 높이와 색상으로
-          구분해 시각적으로 구조를 파악하기 쉽게 구성했습니다.
+          <code>&lt;main&gt;</code> : 주요 콘텐츠를 감싸는 중앙 영역.
         </li>
         <li>
-          <strong>선택자 사용법</strong>, 특히 <code>id</code>와{' '}
-          <code>class</code>를 구조 구분에 따라 잘 활용하는 것이 중요합니다.
+          <code>&lt;article&gt;</code> : 독립적인 콘텐츠 블록에 사용 (슬라이드
+          등).
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 관련 콘텐츠 그룹을 묶는 용도.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 사이트 하단 정보를 포함하는 영역.
         </li>
       </ul>
-      <p>
-        지금까지의 반복 작업을 통해 HTML 구조와 CSS 레이아웃의 흐름에
-        익숙해졌다면,
-        <strong>실무 레이아웃에도 금방 적응</strong>할 수 있게 될 거예요!
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 수평 정렬을 위해 <code>#wrap</code>,{' '}
+          <code>#contents</code>, <code>#footer</code> 등에 적용.
+        </li>
+        <li>
+          <code>width</code>, <code>height</code> → 각 박스의 크기를 설정하여
+          레이아웃 구조 구분.
+        </li>
+        <li>
+          <code>background-color</code> → 시각적으로 구조를 확인하기 위해 각
+          박스에 배경색 지정.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          C-3 유형은 C-1, C-2와 동일한 큰 틀을 유지하면서, **반복 복습과 응용
+          연습**을 위한 구성입니다.
+        </li>
+        <li>
+          <code>#aside</code>와 <code>#main</code>으로 수평 구조를 잡고, 내부
+          콘텐츠를 명확하게 분할했습니다.
+        </li>
+        <li>
+          HTML 구조와 CSS 스타일을 매칭하며 **선택자 설계 방식에 익숙해지는
+          과정**을 경험했습니다.
+        </li>
+        <li>
+          이제는 각 박스를 배치하고 스타일을 지정하는 흐름이 **자연스럽게 손에
+          익는 단계**입니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

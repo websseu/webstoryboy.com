@@ -23,11 +23,12 @@ export default function Webdesign01() {
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        VSCODE를 실행하고 webd2023폴더를 만들고 A-1.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더를 만들고 layoutA-1.html파일을
+        만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 A-1으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 A-1으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -36,14 +37,10 @@ export default function Webdesign01() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 A-1</title>
+    <title>웹디자인개발기능사 레이아웃 A-1</title>
 </head>
 <body>
-    <div class="wrap">
-        <header>헤더</header>
-        <section>콘텐츠</section>
-        <footer>푸터</footer>
-    </div>
+    
 </body>
 </html>`}
       />
@@ -244,10 +241,6 @@ export default function Webdesign01() {
       <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>&lt;div&gt; : 가장 기본적인 블록 요소. 영역 구분용으로 사용됨.</li>
-        <li>
-          &lt;header&gt;, &lt;footer&gt;, &lt;section&gt; : 시멘틱 의미 없이
-          연습에서는 주로 div로 대체 가능.
-        </li>
       </ul>
 
       <h5>✅ 주요 CSS 속성</h5>

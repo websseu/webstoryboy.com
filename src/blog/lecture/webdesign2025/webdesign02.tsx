@@ -23,10 +23,12 @@ export default function Webdesign02() {
       <p>그럼 바로 시작해볼까요? 😇 렛츠기릿!</p>
 
       <h4>1. 기본 구조 만들기</h4>
-      <p className='uline'>VSCODE를 실행하고 A-2.html파일을 만들겠습니다.</p>
+      <p className='uline'>
+        VSCODE를 실행하고 webdesign폴더 안에 layoutA-2.html파일을 만들겠습니다.
+      </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 A-2으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 A-2으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -35,7 +37,7 @@ export default function Webdesign02() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 A-2</title>
+    <title>웹디자인개발기능사 레이아웃 A-2</title>
 </head>
 <body>
     
@@ -225,32 +227,79 @@ export default function Webdesign02() {
 }`}
       />
       <h4>3. 정리</h4>
-      <h5>✅ 시멘틱 태그(Semantic Tags)</h5>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
-        <li>&lt;header&gt; 페이지나 섹션의 머리말 영역 </li>
-        <li>&lt;nav&gt; 내비게이션 링크 영역 </li>
-        <li>&lt;main&gt; 문서의 주요 콘텐츠 영역 </li>
-        <li>&lt;section&gt; 독립적인주제나 기능 그룹을 의미 </li>
-        <li>&lt;article&gt; 독립적으로 배포 가능한 콘텐츠 단위 </li>
-        <li>&lt;footer&gt; 페이지나 섹션의 바닥글 영역</li>
+        <li>&lt;div&gt; : 가장 기본적인 블록 요소. 영역 구분용으로 사용됨.</li>
+        <li>
+          &lt;header&gt; : 페이지나 섹션의 머리말 영역. 로고, 제목, 메뉴 등이
+          포함됨.
+        </li>
+        <li>
+          &lt;nav&gt; : 주요 내비게이션 링크를 담는 영역. 사이트 이동을 돕는
+          메뉴 역할.
+        </li>
+        <li>
+          &lt;main&gt; : 문서의 주요 콘텐츠 영역. 페이지에서 한 번만 사용하며
+          핵심 내용을 포함.
+        </li>
+        <li>
+          &lt;section&gt; : 주제별로 구분되는 콘텐츠 묶음. 제목 태그와 함께
+          사용하는 것이 일반적.
+        </li>
+        <li>
+          &lt;article&gt; : 독립적으로 배포 가능한 콘텐츠. 블로그 글, 뉴스 기사,
+          게시글 등에 사용.
+        </li>
+        <li>
+          &lt;footer&gt; : 페이지나 섹션의 바닥글 영역. 저작권, 연락처, 부가
+          링크 등을 포함.
+        </li>
       </ul>
-      <h5>✅ 활용 팁</h5>
+
+      <h5>✅ 주요 CSS 속성</h5>
       <ul>
         <li>
-          시멘틱 태그는 구조에 의미를 부여하여 웹 접근성 향상 및 검색 엔진
-          최적화(SEO) 에도 유리합니다.
+          <code>display: flex</code> → 자식 요소들을 가로로 정렬할 때 사용.{' '}
+          <code>#header</code>, <code>#contents</code>, <code>#footer</code>에
+          적용하여 가로 배치 실습.
         </li>
         <li>
-          시멘틱 태그를 쓰면 디자인에는 영향이 없지만, 코드의 가독성과 의미
-          전달력이 향상됩니다.
+          <code>margin: 0 auto</code> → 가운데 정렬. <code>#wrap</code>에
+          적용하여 페이지 전체를 중앙에 위치.
         </li>
         <li>
-          모든 레이아웃에 반드시 시멘틱 태그를 써야 하는 것은 아니지만,
-          가능하다면 사용하도록 습관을 들이세요.
+          <code>width, height</code> → 레이아웃 박스의 크기 설정. 모든 영역에
+          정확한 사이즈 지정 실습.
         </li>
         <li>
-          시멘틱 태그와 id, class는 함께 사용하여 스타일링을 유연하게 조절할 수
-          있습니다.
+          <code>background-color</code> → 구조 확인용 시각적 배경색 설정.
+        </li>
+      </ul>
+
+      <h5>✅ 구조 설계 포인트</h5>
+      <ul>
+        <li>
+          <code>#wrap</code> : 전체 레이아웃을 감싸는 메인 컨테이너
+        </li>
+        <li>
+          <code>#header</code>, <code>#slider</code>, <code>#contents</code>,{' '}
+          <code>#footer</code> : 시각적 구조 구분
+        </li>
+        <li>flex 속성을 활용한 가로 배치 (헤더/컨텐츠/푸터 내부 요소)</li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          기본적인 레이아웃 구조를 이해하고, flex를 활용한 영역 배치를
+          경험했습니다.
+        </li>
+        <li>
+          시험에서도 의미 있는 구조 설계 + 최신 CSS 방식(flex) 을 적용하는 것이
+          중요합니다.
+        </li>
+        <li>
+          실제 시험에선 float 대신 <code>flex</code> 사용이 권장됩니다.
         </li>
       </ul>
 

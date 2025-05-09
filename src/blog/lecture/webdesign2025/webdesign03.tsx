@@ -19,14 +19,13 @@ export default function Webdesign03() {
         달라지는 방식이기 때문에, 한 번 익혀두면 나머지 유형도 금방 습득할 수
         있습니다. 그럼, 바로 시작해볼까요? 😅 렛츠기릿!
       </p>
-
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 A-3.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutA-3.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 A-3으로 변경해주겠습니다.
+        title은 웹디자인개발기능사 레이아웃 A-3으로 변경해주겠습니다.
       </p>
       <CodeBlock
         language='html'
@@ -35,7 +34,7 @@ export default function Webdesign03() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 A-3</title>
+    <title>웹디자인개발기능사 레이아웃 A-3</title>
 </head>
 <body>
     
@@ -96,7 +95,6 @@ export default function Webdesign03() {
     background-color: #d1d1d1;
 }`}
       />
-
       <h4>2. 각 섹션 작업하기</h4>
       <p>
         헤더 영역은 기존과 동일합니다. 로고 영역은 사이트 문서에 있어 가장
@@ -110,7 +108,7 @@ export default function Webdesign03() {
         language='html'
         code={`<div id="header">
     <h1 class="logo"></h1>
-    <div class="nav"></div>
+    <nav class="nav"></nav>
 </div>
 <!-- //header -->`}
       />
@@ -131,7 +129,6 @@ export default function Webdesign03() {
     background-color: #e3e3e3;
 }`}
       />
-
       <p>슬라이드 영역은 별거 없으니 표시만 하고 넘어가겠습니다. 슝~~~</p>
       <CodeBlock
         language='html'
@@ -146,7 +143,6 @@ export default function Webdesign03() {
     background-color: #d9d9d9;
 }`}
       />
-
       <p>
         컨텐츠 영역은 총 3개의 섹션으로 구성되어 있습니다. 각 섹션은 독립적인
         의미를 가지기 때문에 이번에는 section 태그를 사용해서 작업했습니다. HTML
@@ -167,11 +163,11 @@ export default function Webdesign03() {
       </p>
       <CodeBlock
         language='html'
-        code={`<div id="contents">
+        code={`<main id="contents">
     <section class="content1"></section>
     <section class="content2"></section>
     <section class="content3"></section>
-</div>
+</main>
 <!-- //contents -->`}
       />
       <CodeBlock
@@ -238,49 +234,111 @@ export default function Webdesign03() {
     background-color: #9d9d9d;
 }`}
       />
-
       <h4>3. 정리</h4>
-      <h5>✅ ID와 CLASS의 차이점</h5>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <span className='uline'>
-            아이디(id)는 페이지 안에서 단 한 번만 사용할 수 있습니다.
-          </span>{' '}
-          즉, 고유한 식별자 역할을 합니다. 예를 들어, header나 footer처럼
-          문서에서 한 번만 등장하는 중요한 영역에 id를 설정합니다. CSS에서는
-          #아이디명 형태로 선택해서 스타일을 적용하고, 자바스크립트에서도 특정
-          요소를 빠르게 찾을 때 사용합니다.
+          &lt;div&gt; : 가장 기본적인 블록 요소. 의미 없이 영역을 나눌 때 사용.
         </li>
         <li>
-          <span className='uline'>
-            클래스(class)는 같은 스타일이나 기능을 적용하고 싶은 여러 요소에
-            반복해서 사용할 수 있는 이름입니다.
-          </span>{' '}
-          예를 들어, 여러 개의 메뉴 버튼, 카드, 섹션 등에 같은 클래스를 부여해서
-          한번에 스타일을 지정할 수 있습니다. CSS에서는 .클래스명으로 선택하고,
-          자바스크립트에서도 같은 클래스를 가진 여러 요소를 다룰 수 있습니다.
+          &lt;header&gt; : 사이트 또는 섹션의 머리말. 로고, 제목, 메뉴 등을
+          포함.
+        </li>
+        <li>&lt;nav&gt; : 내비게이션 영역. 주요 링크나 메뉴를 구성.</li>
+        <li>&lt;main&gt; : 문서의 중심 콘텐츠. 한 페이지에 한 번만 사용.</li>
+        <li>
+          &lt;section&gt; : 주제별 콘텐츠 묶음. 독립적인 의미가 있는 경우 사용.
         </li>
         <li>
-          차이를 한마디로 정리하면 id는{' '}
-          <em className='uline'>단 하나, 고유한 대상</em> class는{' '}
-          <em className='uline'>여러 개, 공통된 대상</em> 을 위해 사용한다고
-          기억하시면 됩니다.
-        </li>
-        <li>
-          스타일을 적용할 때 우선순위를 따지면 id가 class보다 더 강한 힘을
-          가집니다. 그래서 특별히 중요한 요소에 스타일을 지정할 때 id를 쓰는
-          경우가 많습니다.
-        </li>
-        <li>
-          다만 최근에는 유지보수 편의성과 재사용성을 위해 id보다 class를
-          중심으로 스타일링하는 것이 더 권장되는 추세입니다.
-        </li>
-        <li>
-          아직 차이점을 정확히 모르셔도 됩니다. 앞으로 반복 사용하다보면 이해가
-          됩니다.
+          &lt;footer&gt; : 페이지나 섹션의 바닥글. 저작권, 정보, 부가 링크 등을
+          포함.
         </li>
       </ul>
-
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>display: flex</code> → 가로 정렬을 위한 핵심 속성. 헤더, 콘텐츠,
+          푸터 내부 배치에 사용.
+        </li>
+        <li>
+          <code>margin: 0 auto</code> → 가운데 정렬. <code>#wrap</code>에
+          적용하여 레이아웃 중앙 정렬.
+        </li>
+        <li>
+          <code>width</code>, <code>height</code> → 각 영역의 너비와 높이를
+          설정.
+        </li>
+        <li>
+          <code>background-color</code> → 색상으로 구조 확인. 학습 시 시각적으로
+          유용함.
+        </li>
+      </ul>
+      <h5>✅ ID와 CLASS의 차이</h5>
+      <ul>
+        <li>
+          <code>id</code>는 문서 내 유일하게 사용되는 고유 식별자. 주로{' '}
+          <code>#header</code>, <code>#footer</code> 등 주요 단일 영역에 사용.
+        </li>
+        <li>
+          <code>class</code>는 여러 요소에 반복 적용할 수 있는 그룹 식별자. 공통
+          스타일을 묶을 때 사용.
+        </li>
+        <li>
+          CSS에서는 <code>#아이디명</code>과 <code>.클래스명</code>으로 스타일을
+          적용.
+        </li>
+        <li>
+          우선순위는 <code>id &gt; class</code>. 하지만 유지보수에는{' '}
+          <code>class</code> 기반 설계가 더 유리함.
+        </li>
+      </ul>
+      <h5>✅ 블록 요소 (Block Element)</h5>
+      <ul>
+        <li>한 줄 전체를 차지하며, 위에서 아래로 쌓이는 구조입니다.</li>
+        <li>기본적으로 줄바꿈이 자동으로 발생합니다.</li>
+        <li>
+          가로/세로 크기(<code>width</code>, <code>height</code>) 지정이
+          가능합니다.
+        </li>
+        <li>레이아웃을 구성할 때 주로 사용됩니다.</li>
+        <li>
+          <strong>예시:</strong> <code>&lt;div&gt;</code>,<code>&lt;p&gt;</code>
+          , <code>&lt;h1&gt; ~ &lt;h6&gt;</code>,<code>&lt;section&gt;</code>,{' '}
+          <code>&lt;article&gt;</code>,<code>&lt;header&gt;</code>,{' '}
+          <code>&lt;footer&gt;</code> 등
+        </li>
+      </ul>
+      <h5>✅ 인라인 요소 (Inline Element)</h5>
+      <ul>
+        <li>
+          내용만큼의 너비만 차지하며, 줄바꿈 없이 한 줄 안에 나란히 배치됩니다.
+        </li>
+        <li>텍스트나 작은 요소들을 감쌀 때 사용합니다.</li>
+        <li>
+          <code>width</code>, <code>height</code> 지정이 불가능하며, 마진/패딩도
+          제한적입니다.
+        </li>
+        <li>텍스트나 버튼, 링크 등에 자주 쓰입니다.</li>
+        <li>
+          <strong>예시:</strong> <code>&lt;span&gt;</code>,
+          <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>,
+          <code>&lt;em&gt;</code>, <code>&lt;img&gt;</code> 등
+        </li>
+      </ul>
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          A-2 유형에 이어 구조를 유지하면서 푸터를 2단, 2중 구조로 확장하는 방식
+          연습.
+        </li>
+        <li>
+          복잡한 구조도 <code>div</code>와 <code>flex</code>만으로 충분히 구현
+          가능함을 체험.
+        </li>
+        <li>
+          앞으로 나올 다른 A유형 변형에서도 이 구조와 원리를 그대로 응용 가능.
+        </li>
+      </ul>
       <h4>4. 마무리</h4>
       <p>
         이번 레이아웃을 통해 기본 구조 안에서 섹션을 추가하거나 세부적으로

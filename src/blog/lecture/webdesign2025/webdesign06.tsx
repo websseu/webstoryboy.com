@@ -14,7 +14,7 @@ export default function Webdesign06() {
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 B-2.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutB-2.html파일을 만들겠습니다.
       </p>
       <p>
         !를 입력하고 Tab 키를 누르면 기본 HTML 구조가 자동으로 완성됩니다. 이제
@@ -25,7 +25,7 @@ export default function Webdesign06() {
           lang 속성은 &quot;ko&quot;로 변경해 한국어 웹사이트임을 명시하고,
         </li>
         <li>
-          title은 &quot;웹디자인기능사 레이아웃 B-2&quot;로 설정하겠습니다.
+          title은 &quot;웹디자인개발기능사 레이아웃 B-2&quot;로 설정하겠습니다.
         </li>
       </ul>
       <p>
@@ -56,7 +56,7 @@ export default function Webdesign06() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 B-2</title>
+    <title>웹디자인개발기능사 레이아웃 B-2</title>
 </head>
 <body>
     
@@ -128,7 +128,7 @@ export default function Webdesign06() {
         code={`<div id="header">
     <div class="header_container">
         <h1 class="logo"></h1>
-        <div class="nav"></div>
+        <nav class="nav"></nav>
     </div>
 </div>
 <!-- //header -->`}
@@ -182,11 +182,11 @@ export default function Webdesign06() {
       </p>
       <CodeBlock
         language='html'
-        code={`<div id="contents">
+        code={`<main id="contents">
     <section class="content1"></section>
     <section class="content2"></section>
     <section class="content3"></section>
-</div>
+</main>
 <!-- //contents -->`}
       />
       <CodeBlock
@@ -264,42 +264,105 @@ export default function Webdesign06() {
       />
 
       <h4>3. 정리</h4>
-      <p>
-        이제까지 B-2 유형의 기본 구조를 만들면서 여러 설정 태그를 다뤄봤습니다.
-        웹 문서를 만들 때 필요한 기본적인 설정을 알아보겠습니다.
-      </p>
+      <h5>✅ HTML 기본 문서 설정 태그</h5>
       <ul>
         <li>
-          <code>&lt;!DOCTYPE html&gt;</code> : HTML5 문서임을 선언합니다.
-          브라우저가 문서를 올바르게 해석하도록 도와주는 선언입니다.
+          <code>&lt;!DOCTYPE html&gt;</code> : 현재 문서가 HTML5 문서임을
+          브라우저에 알리는 선언.
         </li>
         <li>
-          <code>&lt;html lang=&quot;ko&quot;&gt;</code> : 페이지의 주 언어가
-          한국어임을 브라우저에 알려줍니다. 검색엔진이나 스크린 리더(접근성)에
-          중요한 정보예요.
+          <code>&lt;html lang=&quot;ko&quot;&gt;</code> : 페이지 주 언어가
+          한국어임을 설정. 웹 접근성과 SEO에 중요.
         </li>
         <li>
-          <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> : 문서의 문자
-          인코딩 방식입니다. 한글을 포함한 다양한 문자를 깨지지 않고 표시하려면
-          반드시 설정해야 합니다.
+          <code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code> : 문자 인코딩 방식
+          설정. 한글 및 다양한 문자 표현에 필수.
         </li>
         <li>
           <code>
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
             initial-scale=1.0&quot;&gt;
-          </code>
-          : 반응형 웹 디자인을 위한 설정입니다. 기기 화면 크기에 맞춰 페이지가
-          자동으로 맞춰지게 해주는 중요한 태그입니다.
+          </code>{' '}
+          : 반응형 웹을 위한 필수 설정. 모바일에서도 화면이 잘 보이도록 조정.
         </li>
         <li>
-          <code>&lt;title&gt;</code> : 브라우저 탭에 표시될 문서의 제목입니다.
-          사용자가 어떤 페이지인지 구분할 수 있도록 해줍니다.
+          <code>&lt;title&gt;</code> : 브라우저 탭에 표시되는 제목. 문서의 이름
+          역할.
         </li>
       </ul>
-      <p>
-        이 항목들은 웹 페이지의 기본 뼈대를 이루는 매우 중요한 구성요소입니다.
-        자주 사용되기 때문에 자연스럽게 익혀두시면 좋습니다 😊
-      </p>
+
+      <h5>✅ 주요 HTML 시멘틱 태그</h5>
+      <ul>
+        <li>
+          <code>&lt;header&gt;</code> : 페이지 상단 구성. 로고와 내비게이션
+          포함.
+        </li>
+        <li>
+          <code>&lt;article&gt;</code> : 독립적인 콘텐츠 단위. 슬라이더 영역에
+          사용.
+        </li>
+        <li>
+          <code>&lt;main&gt;</code> : 핵심 콘텐츠를 포함. 문서당 1회만 사용.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 주제별로 나뉜 콘텐츠 그룹.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 하단 정보나 부가 링크 포함 영역.
+        </li>
+      </ul>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>width: 100%</code> : 전체 브라우저 너비를 활용하는 B유형 구조의
+          핵심.
+        </li>
+        <li>
+          <code>margin: 0 auto</code> : 고정 폭 박스를 브라우저 중앙에 정렬할 때
+          사용.
+        </li>
+        <li>
+          <code>display: flex</code> : 자식 요소들을 가로로 배치. 콘텐츠 및 푸터
+          정렬에 활용.
+        </li>
+        <li>
+          <code>background-color</code> : 학습 시 영역 구분을 위한 시각적 확인용
+          색상 설정.
+        </li>
+      </ul>
+
+      <h5>✅ 구조 설계 포인트</h5>
+      <ul>
+        <li>
+          <code>#wrap</code> : 전체 레이아웃을 감싸는 부모 컨테이너. width는
+          100%.
+        </li>
+        <li>
+          <code>.header_container</code>, <code>.footer_container</code> : 고정
+          폭(1200px) 중앙 정렬.
+        </li>
+        <li>
+          <code>#contents</code> 영역 안에서 <code>section</code> 3개를 가로로
+          배치하여 콘텐츠 구성.
+        </li>
+        <li>
+          <code>#footer</code> 내부는 2단 → 2중 구조로 나뉘며 실무 감각 익히기에
+          적절한 구성.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          B유형의 전체 폭 레이아웃을 기반으로 고정 폭 콘텐츠 정렬 방식 연습.
+        </li>
+        <li>문서 설정 태그 및 시멘틱 태그의 실제 사용 목적과 위치 이해.</li>
+        <li>flex 속성과 가로 배치 구조에 대한 반복 학습.</li>
+        <li>
+          기본 문서 구조를 이해하고 구성요소 간 역할을 구분하는 것이 중요함.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>여기까지 B-2 유형 레이아웃을 함께 만들어봤습니다.</p>

@@ -18,17 +18,17 @@ export default function Webdesign07() {
       </p>
       <p>
         그래서 웹사이트를 만들 때는 보통 큰 틀(전체 구조)은 id를 사용하고, 세부
-        구조나 반복되는 스타일은 class를 사용하는 것이 일반적입니다.
+        구조나 반복되는 스타일은 class를 사용하는 것이 일반적입니다. 이번에도
+        함께 만들어보면서 자연스럽게 익혀볼게요! 렛츠 기릿! 😇
       </p>
-      <p>이번에도 함께 만들어보면서 자연스럽게 익혀볼게요! 렛츠 기릿! 😇</p>
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 B-3.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutB-3.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 B-3으로 변경해주겠습니다. 오른쪽에
+        title은 웹디자인개발기능사 레이아웃 B-3으로 변경해주겠습니다. 오른쪽에
         디자인 보기 버튼을 누르면 전체적인 레이아웃을 한 눈에 볼 수 있으니
         참고해주세요!
       </p>
@@ -40,7 +40,7 @@ export default function Webdesign07() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 B-3</title>
+    <title>웹디자인개발기능사 레이아웃 B-3</title>
 </head>
 <body>
     
@@ -168,12 +168,12 @@ export default function Webdesign07() {
     height: 100px;
     background-color: #efefef;
 }
-#header .logo {
+#header .container .logo {
     width: 20%;
     height: 100px;
     background-color: #c7c7c7;
 }
-#header .nav {
+#header .container .nav {
     width: 80%;
     height: 100px;
     background-color: #bcbcbc;
@@ -216,17 +216,17 @@ export default function Webdesign07() {
         code={`#contents {
     width: 100%;
 }
-#contents .content1 {
+#contents .container .content1 {
     width: 33.3333%;
     height: 200px;
     background-color: #bcbcbc;
 }
-#contents .content2 {
+#contents .container .content2 {
     width: 33.3333%;
     height: 200px;
     background-color: #b1b1b1;
 }
-#contents .content3 {
+#contents .container .content3 {
     width: 33.3333%;
     height: 200px;
     background-color: #a3a3a3;
@@ -254,17 +254,17 @@ export default function Webdesign07() {
     width: 100%;
     background-color: #d1d1d1;
 }
-#footer .footer1 {
+#footer .container .footer1 {
     width: 20%;
     height: 100px;
     background-color: #9d9d9d;
 }
-#footer .footer2 {
+#footer .container .footer2 {
     width: 60%;
     height: 100px;
     background-color: #929292;
 }
-#footer .footer3 {
+#footer .container .footer3 {
     width: 20%;
     height: 100px;
     background-color: #838383;
@@ -272,31 +272,105 @@ export default function Webdesign07() {
       />
 
       <h4>3. 정리</h4>
-      <p>
-        이번 B-3 유형에서는 <strong>공통 클래스를 재활용</strong>하여 작업
-        효율을 높이는 방법을 배웠습니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          <code>.container</code> 클래스는 여러 섹션에서 반복적으로 사용되며,
-          <strong>가운데 정렬, 넓이 지정, flex 정렬</strong> 같은 공통 속성을
-          담고 있습니다.
+          <code>&lt;header&gt;</code> : 페이지의 상단 구조. 로고와 내비게이션을
+          포함.
         </li>
         <li>
-          <code>id</code>는 한 문서에서 <strong>한 번만</strong> 사용할 수 있고,
-          <code>class</code>는 여러 요소에 <strong>반복해서 사용</strong>할 수
-          있다는 차이점을 기억하세요.
+          <code>&lt;article&gt;</code> : 독립된 콘텐츠 단위. 슬라이드 등 의미
+          있는 콘텐츠에 사용.
         </li>
         <li>
-          각각의 섹션(header, slider, contents, footer)은
-          <strong>전체 영역과 가운데 영역</strong>으로 구분되며, 공통된 구조를
-          갖되 자식 요소만 다르게 구성했습니다.
+          <code>&lt;main&gt;</code> : 문서의 중심 콘텐츠. 페이지당 한 번만 사용.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 논리적으로 묶인 콘텐츠 블록.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 페이지 하단 정보, 링크, 저작권 등의
+          영역.
         </li>
       </ul>
-      <p>
-        이렇게 구조를 재사용하고 패턴화하면 코드의 유지보수성과 일관성이
-        높아집니다. 실무에서도 이런 식으로 설계하는 경우가 많으니 꼭 익혀두세요!
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>width: 100%</code> → 브라우저 전체 너비를 채우는 기본 구조 설정.
+        </li>
+        <li>
+          <code>margin: 0 auto</code> → 고정 너비 요소를 수평 가운데 정렬.
+        </li>
+        <li>
+          <code>height: inherit</code> → 부모 요소의 높이를 자식에게 그대로
+          적용.
+        </li>
+        <li>
+          <code>background-color: rgba()</code> → 배경색에 투명도를 적용하여
+          구조를 시각적으로 구분.
+        </li>
+        <li>
+          <code>display: flex</code> → 자식 요소를 가로 방향으로 정렬할 때 사용.
+        </li>
+      </ul>
+      <h5>✅ CSS 색상 표현 방법</h5>
+      <ul>
+        <li>
+          <code>이름표기법</code> : <code>red</code>, <code>blue</code>,{' '}
+          <code>green</code> 등 기본 색상 이름
+        </li>
+        <li>
+          <code>16진수</code> : <code>#ff0000</code> (빨강),{' '}
+          <code>#0000ff</code> (파랑) 등
+        </li>
+        <li>
+          <code>RGB</code> : <code>rgb(255, 0, 0)</code> (빨강),{' '}
+          <code>rgb(0, 0, 255)</code> (파랑)
+        </li>
+        <li>
+          <code>RGBA</code> : <code>rgba(0, 0, 0, 0.2)</code>처럼{' '}
+          <strong>투명도</strong>까지 설정 가능
+        </li>
+        <li>
+          <code>HSL / HSLA</code> : 색상, 채도, 밝기로 표현. 예:{' '}
+          <code>hsl(120, 100%, 50%)</code>
+        </li>
+      </ul>
+
+      <h5>✅ 공통 클래스 활용</h5>
+      <ul>
+        <li>
+          <code>.container</code> 클래스는 가운데 정렬, 고정 폭, flex 정렬 등의
+          공통 속성을 포함합니다.
+        </li>
+        <li>
+          여러 섹션에서 반복적으로 사용되므로 유지보수와 작업 효율이 향상됩니다.
+        </li>
+        <li>
+          실무에서도 반복되는 구조를 하나의 클래스에 담아{' '}
+          <strong>재사용</strong>하는 방식을 많이 사용합니다.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          B유형의 전체 너비 레이아웃 구조를 바탕으로 가운데 콘텐츠를 구성하는
+          패턴을 연습했습니다.
+        </li>
+        <li>
+          <code>.container</code> 클래스를 통해 재사용 가능한 CSS 설계를
+          경험했습니다.
+        </li>
+        <li>
+          flex를 통한 가로 배치, 영역 분리 구조를 반복하며 자연스럽게 레이아웃
+          설계 감각을 키웠습니다.
+        </li>
+        <li>
+          효율적이고 유지보수하기 쉬운 CSS 구조의 기초를 익히는 실습이었습니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>

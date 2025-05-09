@@ -14,11 +14,11 @@ export default function Webdesign08() {
 
       <h4>1. 기본 구조 만들기</h4>
       <p className='uline'>
-        웹 문서 만들기 : VSCODE를 실행하고 B-4.html파일을 만들겠습니다.
+        VSCODE를 실행하고 webdesign폴더 안에 layoutB-4.html파일을 만들겠습니다.
       </p>
       <p>
         !를 치고 tab버튼을 누르면 다음과 같이 나타납니다. lang는 ko로 변경하고
-        title은 웹디자인기능사 레이아웃 B-4으로 변경해주겠습니다. 오른쪽에
+        title은 웹디자인개발기능사 레이아웃 B-4으로 변경해주겠습니다. 오른쪽에
         디자인 보기 버튼을 누르면 전체적인 레이아웃을 한 눈에 볼 수 있으니
         참고해주세요!
       </p>
@@ -30,7 +30,7 @@ export default function Webdesign08() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 B-4</title>
+    <title>웹디자인개발기능사 레이아웃 B-4</title>
 </head>
 <body>
     
@@ -258,32 +258,67 @@ export default function Webdesign08() {
       />
 
       <h4>3. 정리</h4>
-      <p>
-        이번 B-4 유형에서는 지금까지 배운 B유형 레이아웃을 기반으로,
-        <strong>푸터 구조만 다르게 구성된 변형 레이아웃</strong>을
-        만들어보았습니다.
-      </p>
+      <h5>✅ 주요 HTML 태그</h5>
       <ul>
         <li>
-          전체 구조는 동일하게 <code>#wrap</code> 안에 <code>#header</code>,
-          <code>#slider</code>, <code>#contents</code>, <code>#footer</code>로
-          구성되어 있습니다.
+          <code>&lt;header&gt;</code> : 상단 영역으로, 로고와 내비게이션 포함.
         </li>
         <li>
-          공통적으로 사용하는 <code>.container</code> 클래스를 활용해 코드의
-          재사용성과 유지보수성을 높였습니다.
+          <code>&lt;article&gt;</code> : 의미 있는 독립 콘텐츠(여기서는 슬라이더
+          영역).
         </li>
         <li>
-          <code>#footer</code> 안에서는 내부 구조를{' '}
-          <strong>2단 → 다시 2단</strong> 구조로 나누며 더 복잡한 레이아웃도
-          구성할 수 있다는 점을 배웠습니다.
+          <code>&lt;main&gt;</code> : 문서의 핵심 콘텐츠를 감싸는 영역.
+        </li>
+        <li>
+          <code>&lt;section&gt;</code> : 콘텐츠 내부에서 주제별로 구분할 때
+          사용.
+        </li>
+        <li>
+          <code>&lt;footer&gt;</code> : 하단 정보, 메뉴, 저작권 등을 포함하는
+          영역.
         </li>
       </ul>
-      <p>
-        이처럼 <strong>전체 + 가운데 레이아웃 구조</strong>는 매우 유연하고,
-        실무에서도 가장 자주 쓰이는 패턴입니다. 익숙해질수록 더 빠르고
-        효율적으로 레이아웃을 설계할 수 있어요!
-      </p>
+
+      <h5>✅ 주요 CSS 속성</h5>
+      <ul>
+        <li>
+          <code>width: 100%</code> → 브라우저 전체 폭을 채우는 구조 설정.
+        </li>
+        <li>
+          <code>margin: 0 auto</code> → 고정 폭 콘텐츠를 가운데 정렬.
+        </li>
+        <li>
+          <code>height: inherit</code> → 부모 요소의 높이를 자식 요소에 상속.
+        </li>
+        <li>
+          <code>display: flex</code> → 자식 요소를 가로로 나란히 정렬.
+        </li>
+        <li>
+          <code>background-color: rgba()</code> → 배경색을 투명도 있게 지정해
+          시각적 구조 확인.
+        </li>
+      </ul>
+
+      <h5>✅ 이번 실습의 핵심</h5>
+      <ul>
+        <li>
+          전체 구조는 B유형의 반복된 패턴을 따르되,{' '}
+          <strong>푸터의 구조만 변경된 예제</strong>였습니다.
+        </li>
+        <li>
+          2단 → 다시 2단 구조의 푸터를 만들며{' '}
+          <strong>복잡한 하위 레이아웃 분할</strong> 방법을 연습했습니다.
+        </li>
+        <li>
+          <code>.container</code>의 재사용을 통해{' '}
+          <strong>효율적인 CSS 설계 방식</strong>을 체험했습니다.
+        </li>
+        <li>
+          실무에서도 자주 쓰이는 <strong>전체 영역 + 가운데 정렬</strong> 방식의
+          이해도를 높였습니다.
+        </li>
+      </ul>
 
       <h4>4. 마무리</h4>
       <p>
@@ -299,11 +334,8 @@ export default function Webdesign08() {
       </p>
       <p>
         이제 B유형은 여기서 마무리하고, 더 다양한 레이아웃 구성이 나오는
-        C유형으로 넘어가보겠습니다.
-      </p>
-      <p>
-        그동안 수고 많으셨고, 다음 강의에서 더욱 재미있고 실전적인 내용으로 다시
-        만나요! 😊
+        C유형으로 넘어가보겠습니다. 다음 강의에서 더욱 재미있고 실전적인
+        내용으로 다시 만나요! 😊
       </p>
     </>
   )
