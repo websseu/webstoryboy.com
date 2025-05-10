@@ -9,17 +9,17 @@ interface PageSelectorProps {
   currentPage: number
 }
 
-export default function PageSelector({
-  currentLimit,
-  baseUrl,
-  currentPage,
-}: PageSelectorProps) {
+export default function PageSelector({ currentLimit, baseUrl, currentPage }: PageSelectorProps) {
   const router = useRouter()
   const pageSizes = [10, 15, 20, 50]
 
   const handlePageSizeChange = (limit: number) => {
     const firstItemIndex = (currentPage - 1) * currentLimit
     const newPage = Math.floor(firstItemIndex / limit) + 1
+
+    // 로컬 스토리지에 저장
+    localStorage.setItem('pageLimit', String(limit))
+    localStorage.setItem('page', String(newPage))
 
     router.push(`${baseUrl}?page=${newPage}&limit=${limit}`)
   }
