@@ -30,9 +30,13 @@ import { updatePost } from '@/lib/actions/post.action'
 export default function PostUpdate({
   post,
   postId,
+  page,
+  limit,
 }: {
   post: IPost
   postId: string
+  page: string
+  limit: string
 }) {
   const router = useRouter()
 
@@ -46,7 +50,7 @@ export default function PostUpdate({
       const res = await updatePost(postId, data)
       if (res.success) {
         toast.success(res.message)
-        router.push(`/admin/posts`)
+        router.push(`/admin/posts?page=${page}&limit=${limit}`)
       } else {
         toast.error(res.message)
       }

@@ -56,7 +56,7 @@ export default function PostList({ subCategory, currentSlug }: PostListProps) {
 
   return (
     <Sheet>
-      <SheetTrigger className='w-full flex items-center justify-center p-2 rounded gap-2 text-sm border text-zinc-700 hover:bg-zinc-50 mt-6 cursor-pointer'>
+      <SheetTrigger className='w-full flex items-center justify-center p-2 rounded gap-2 text-sm border text-zinc-700 hover:bg-zinc-50 cursor-pointer'>
         <ScrollText className='w-5 h-5' />
         강의 목록 보기
       </SheetTrigger>

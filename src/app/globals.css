@@ -327,12 +327,15 @@ code .linenumber {
     @apply text-base md:text-lg font-nexon mb-1 text-zinc-800;
   }
   .category__title {
-    @apply text-center text-2xl mt-6;
+    @apply text-center text-2xl mt-6 mb-6;
   }
 
   /* post */
+  .post__page {
+    @apply sm:py-4;
+  }
   .post__page > h2 {
-    @apply text-2xl text-center font-nexon font-light mb-2 mt-4;
+    @apply text-xl lg:text-2xl text-center font-nexon font-light mb-2 mt-4;
   }
   .post__page .info {
     @apply text-xs text-center text-zinc-500 mb-4;
@@ -342,6 +345,9 @@ code .linenumber {
   }
   .post__page .like {
     @apply ml-1;
+  }
+  .post__page .tag {
+    @apply sm:block hidden;
   }
   .post__page .tag a {
     @apply inline-block bg-gray-200 px-5 py-1 mx-1 rounded-full font-poppins text-sm text-gray-700 hover:bg-gray-300 transition;
@@ -356,7 +362,7 @@ code .linenumber {
     @apply flex-1 min-w-0 min-h-[500px] lg:border-r lg:pr-6;
   }
   .post__contents > h3 {
-    @apply text-2xl mb-4;
+    @apply text-xl sm:text-2xl mb-4;
   }
   .post__contents > p {
     @apply text-zinc-500 dark:text-zinc-100 text-[15px] leading-6 mb-4 break-words;
@@ -440,5 +446,8 @@ code .linenumber {
   }
   .eye {
     @apply absolute inset-y-0 right-3 flex items-center text-zinc-500 cursor-pointer;
+  }
+  .check {
+    @apply inline-flex items-center gap-1 bg-red-500 text-white rounded px-2;
   }
 }

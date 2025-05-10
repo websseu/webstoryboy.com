@@ -52,9 +52,8 @@ export default async function PostsPage(props: {
               <TableHead>번호</TableHead>
               <TableHead>타이틀</TableHead>
               <TableHead>슬러그</TableHead>
-              <TableHead>카테고리</TableHead>
-              <TableHead>서브카테고리</TableHead>
-              <TableHead>콘텐츠</TableHead>
+              <TableHead>컴퍼넌트</TableHead>
+              <TableHead>유튜브</TableHead>
               <TableHead>뷰</TableHead>
               <TableHead>좋아요</TableHead>
               <TableHead className='w-[100px]'>관리</TableHead>
@@ -67,7 +66,7 @@ export default async function PostsPage(props: {
                   <TableCell className='w-[60px] text-center'>
                     {(page - 1) * 10 + index + 1}
                   </TableCell>
-                  <TableCell className='text-left'>
+                  <TableCell className='text-center'>
                     <Link
                       href={`/post/${post.slug}`}
                       className='hover:underline underline-offset-4'
@@ -76,10 +75,6 @@ export default async function PostsPage(props: {
                     </Link>
                   </TableCell>
                   <TableCell className='text-center'>{post.slug}</TableCell>
-                  <TableCell className='text-center'>{post.category}</TableCell>
-                  <TableCell className='text-center'>
-                    {post.subCategory}
-                  </TableCell>
                   <TableCell className='text-center'>
                     {post.components?.trim() ? (
                       post.components
@@ -87,11 +82,28 @@ export default async function PostsPage(props: {
                       <X className='w-5 h-5 mx-auto' />
                     )}
                   </TableCell>
+                  <TableCell className='text-center'>
+                    {post.youtubeId ? (
+                      <a
+                        href={`https://www.youtube.com/watch?v=${post.youtubeId}`}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='hover:underline underline-offset-4'
+                      >
+                        보기
+                      </a>
+                    ) : (
+                      '-'
+                    )}
+                  </TableCell>
+
                   <TableCell className='text-center'>{post.numViews}</TableCell>
                   <TableCell className='text-center'>{post.numLikes}</TableCell>
                   <TableCell className='flex gap-1'>
                     <Button asChild size='sm'>
-                      <Link href={`/admin/posts/${post._id.toString()}`}>
+                      <Link
+                        href={`/admin/posts/${post._id.toString()}?page=${currentPage}&limit=${limit}`}
+                      >
                         수정
                       </Link>
                     </Button>

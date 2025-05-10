@@ -39,6 +39,15 @@ export function formatDateTime(dateInput: Date | string): string {
   return `${yyyy}.${MM}.${dd} ${hh}:${mm}`
 }
 
+// 2025.04.03
+export function formatSimpleDate(dateInput: Date | string): string {
+  const d = new Date(dateInput)
+  const yyyy = d.getFullYear()
+  const MM = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${yyyy}.${MM}.${dd}`
+}
+
 // 글 페이지 날짜
 export function formatPostDate(dateInput: string | Date): string {
   const date = typeof dateInput === 'string' ? new Date(dateInput) : dateInput

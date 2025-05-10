@@ -104,7 +104,7 @@ export default async function PostDetailPage(props: {
         </div>
 
         <aside className='post__sidebar '>
-          <div className='ad w-[300px] h-[300px] bg-amber-200 mx-auto'></div>
+          <div className='ad w-[300px] h-[300px] bg-amber-100 mx-auto mb-4 hidden'></div>
 
           {post.subCategory && (
             <PostList subCategory={post.subCategory} currentSlug={post.slug} />
@@ -141,9 +141,7 @@ export default async function PostDetailPage(props: {
             </div>
             <div className='flex flex-col gap-3 w-1/2'>
               <Link
-                href={
-                  'https://github.com/webstoryboy/webdesign/tree/main/coding'
-                }
+                href={'https://github.com/webstoryboy/webdesign/tree/main/code'}
                 target='_blank'
                 className='w-full flex items-center justify-center p-2 rounded gap-2 text-sm border text-zinc-700 hover:bg-zinc-50 mt-2'
               >

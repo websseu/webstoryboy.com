@@ -10,9 +10,7 @@ export default async function LecturePage() {
         <Tabs defaultValue='tab-1'>
           <TabsList className='grid mx-auto grid-cols-2 mb-4'>
             <TabsTrigger value='tab-1'>웹디자인개발기능사</TabsTrigger>
-            <TabsTrigger value='tab-2'>
-              자바스크립트 VS 타입스크립트
-            </TabsTrigger>
+            <TabsTrigger value='tab-2'>타입스크립트</TabsTrigger>
           </TabsList>
           <TabsContent value='tab-1'>
             <div className='page__title'>

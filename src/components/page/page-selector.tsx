@@ -15,7 +15,7 @@ export default function PageSelector({
   currentPage,
 }: PageSelectorProps) {
   const router = useRouter()
-  const pageSizes = [5, 10, 15, 20]
+  const pageSizes = [10, 15, 20, 50]
 
   const handlePageSizeChange = (limit: number) => {
     const firstItemIndex = (currentPage - 1) * currentLimit
