@@ -4,6 +4,8 @@ import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
 import { APP_DESCRIPTION, APP_KEYWORDS, APP_NAME, APP_SITE_URL, APP_SLOGAN } from '@/lib/constants'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -75,6 +77,8 @@ export default function RootLayout({
   return (
     <html lang='ko' suppressHydrationWarning>
       <body className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable}`}>
+        <Analytics />
+        <SpeedInsights />
         <Toaster
           position='top-center'
           toastOptions={{
