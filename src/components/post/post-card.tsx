@@ -20,7 +20,7 @@ export default function PostCard({ posts }: { posts: Post[] }) {
       {posts.length > 0 ? (
         posts.map((post) => (
           <div key={post._id} className='card bg-black/10 rounded-xl'>
-            <div className='card__images group relative overflow-hidden'>
+            <div className='card__images group relative overflow-hidden font-nanum'>
               <Link href={`/post/${post.slug}`}>
                 <Image
                   src={`/${post.category}/${post.subCategory}/${post.images}`}

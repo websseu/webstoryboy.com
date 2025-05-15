@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function SignUpPage() {
   return (
-    <section className='max-w-[500px]'>
+    <section>
       <div className='sm:border border-zinc-300 rounded-md p-4 sm:p-10'>
         <h2 className='text-2xl text-center font-nexon mb-6'>회원가입</h2>
         <SignUpForm />

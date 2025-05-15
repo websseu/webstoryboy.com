@@ -31,19 +31,14 @@ export default function HeaderMenu() {
                         href={section.card.href}
                       >
                         <div className='flex'>
-                          {Array.from({ length: section.card.iconCount }).map(
-                            (_, i) => (
-                              <MdStars
-                                key={i}
-                                className='text-black h-2 w-2 dark:text-white'
-                              />
-                            )
-                          )}
+                          {Array.from({ length: section.card.iconCount }).map((_, i) => (
+                            <MdStars key={i} className='text-black h-2 w-2 dark:text-white' />
+                          ))}
                         </div>
                         <div className='mb-2 font-gmarket text-lg font-medium'>
                           {section.card.title}
                         </div>
-                        <p className='text-sm font-nanum text-zinc-500 whitespace-pre-line'>
+                        <p className='text-sm font-nanum text-zinc-500 break-keep'>
                           {section.card.description}
                         </p>
                       </Link>
@@ -51,11 +46,7 @@ export default function HeaderMenu() {
                   </li>
 
                   {section.items.map((item) => (
-                    <MenuItem
-                      key={item.title}
-                      href={item.href}
-                      title={item.title}
-                    >
+                    <MenuItem key={item.title} href={item.href} title={item.title}>
                       {item.description}
                     </MenuItem>
                   ))}

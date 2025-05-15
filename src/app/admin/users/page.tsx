@@ -27,7 +27,6 @@ export default async function AdminUserPage(props: {
   const searchParams = await props.searchParams
   const page = searchParams.page ? Number.parseInt(searchParams.page) : 1
   const limit = searchParams.limit ? Number.parseInt(searchParams.limit) : 10
-
   const res = await getAllUsersPages({ page, limit })
 
   if (!res.success) {
@@ -45,8 +44,7 @@ export default async function AdminUserPage(props: {
       <div className='relative'>
         <Table className='border-b text-sm'>
           <TableCaption className='caption-top text-zinc-800 text-xl font-nexon mb-4 mt-0'>
-            회원 목록{' '}
-            <span className='text-[10px] text-zinc-500'>{totalUsers}</span>
+            회원 목록 <span className='text-[10px] text-zinc-500'>{totalUsers}</span>
           </TableCaption>
           <TableHeader>
             <TableRow>
@@ -77,15 +75,9 @@ export default async function AdminUserPage(props: {
                     {user.name ?? '-'}
                   </TableCell>
                   <TableCell className='text-center'>{user.email}</TableCell>
-                  <TableCell className='text-center'>
-                    {user.role ?? 'User'}
-                  </TableCell>
-                  <TableCell className='text-center'>
-                    {formatDateTime(user.createdAt)}
-                  </TableCell>
-                  <TableCell className='text-center'>
-                    {user.visitCount}
-                  </TableCell>
+                  <TableCell className='text-center'>{user.role ?? 'User'}</TableCell>
+                  <TableCell className='text-center'>{formatDateTime(user.createdAt)}</TableCell>
+                  <TableCell className='text-center'>{user.visitCount}</TableCell>
                   <TableCell className='flex gap-1'>
                     <UserEdit
                       user={{
@@ -118,11 +110,7 @@ export default async function AdminUserPage(props: {
           />
         </div>
         <div className='absolute right-0 top-2'>
-          <PageSelector
-            currentLimit={limit}
-            baseUrl='/admin/users'
-            currentPage={currentPage}
-          />
+          <PageSelector currentLimit={limit} baseUrl='/admin/users' currentPage={currentPage} />
         </div>
       </div>
     </section>

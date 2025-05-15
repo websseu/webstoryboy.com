@@ -14,7 +14,14 @@ import PostSelect from './post-select'
 import MdEditor from 'react-markdown-editor-lite'
 import ReactMarkdown from 'react-markdown'
 import 'react-markdown-editor-lite/lib/index.css'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
 import { IPost } from '@/lib/db/model/post.model'
 import { IPostInput, IPostUpdate } from '@/lib/types'
 import { PostUpdateSchema } from '@/lib/validator'
@@ -54,7 +61,7 @@ export default function PostUpdate({ post, postId }: { post: IPost; postId: stri
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onValid, onInvalid)} className='space-y-6'>
+      <form onSubmit={form.handleSubmit(onValid, onInvalid)} className='space-y-6 font-nanum'>
         <div className='flex flex-col gap-5 md:flex-row'>
           <FormField
             control={form.control}
@@ -225,7 +232,11 @@ export default function PostUpdate({ post, postId }: { post: IPost; postId: stri
             render={({ field }) => (
               <FormItem className='flex gap-2 justify-center items-center'>
                 <FormControl>
-                  <Checkbox checked={field.value} onCheckedChange={field.onChange} className='h-5 w-5' />
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                    className='h-5 w-5'
+                  />
                 </FormControl>
                 <FormLabel>공개</FormLabel>
               </FormItem>
@@ -234,7 +245,12 @@ export default function PostUpdate({ post, postId }: { post: IPost; postId: stri
         </div>
 
         <div className='mt-6'>
-          <Button type='submit' size='lg' disabled={form.formState.isSubmitting} className='w-full py-6'>
+          <Button
+            type='submit'
+            size='lg'
+            disabled={form.formState.isSubmitting}
+            className='w-full py-6'
+          >
             {form.formState.isSubmitting ? '수정중...' : '수정하기'}
           </Button>
         </div>

@@ -16,8 +16,6 @@ const ContactSchema = new Schema<IContact>(
   { timestamps: true }
 )
 
-const Contact =
-  (models.Contact as Model<IContact>) ||
-  model<IContact>('Contact', ContactSchema)
+const Contact = (models.Contact as Model<IContact>) || model<IContact>('Contact', ContactSchema)
 
 export default Contact

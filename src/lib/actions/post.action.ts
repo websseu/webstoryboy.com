@@ -96,11 +96,7 @@ export async function getAllPostsPages({
 
     const totalPosts = await Post.countDocuments()
     const skip = (Number(page) - 1) * limit
-    const posts = await Post.find()
-      .sort({ createdAt: 1 })
-      .skip(skip)
-      .limit(limit)
-      .lean()
+    const posts = await Post.find().sort({ createdAt: 1 }).skip(skip).limit(limit).lean()
 
     return {
       success: true,
@@ -197,9 +193,7 @@ export async function getPostsForSubCategory(subCategory: string) {
   try {
     await connectToDatabase()
 
-    const posts = await Post.find({ subCategory, isPublished: true })
-      .sort({ createdAt: 1 })
-      .lean()
+    const posts = await Post.find({ subCategory, isPublished: true }).sort({ createdAt: 1 }).lean()
 
     const totalCount = await Post.countDocuments({
       subCategory,

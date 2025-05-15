@@ -7,14 +7,24 @@ import { getAllPostsPages } from '@/lib/actions/post.action'
 import PageIndex from '@/components/page/page-index'
 import PageSelector from '@/components/page/page-selector'
 import PostDelete from '@/components/post/post-delete'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import PageInitializer from '@/components/page/page-initializer'
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 export const metadata: Metadata = {
   title: '글 목록',
 }
 
-export default async function PostsPage(props: { searchParams: Promise<{ page?: string; limit?: string }> }) {
+export default async function PostsPage(props: {
+  searchParams: Promise<{ page?: string; limit?: string }>
+}) {
   const searchParams = await props.searchParams
   const page = searchParams.page ? Number.parseInt(searchParams.page) : 1
   const limit = searchParams.limit ? Number.parseInt(searchParams.limit) : 10
@@ -54,9 +64,14 @@ export default async function PostsPage(props: { searchParams: Promise<{ page?: 
             {posts.length > 0 ? (
               posts.map((post: IPost, index: number) => (
                 <TableRow key={post._id}>
-                  <TableCell className='w-[60px] text-center'>{(page - 1) * 10 + index + 1}</TableCell>
+                  <TableCell className='w-[60px] text-center'>
+                    {(page - 1) * 10 + index + 1}
+                  </TableCell>
                   <TableCell className='text-center'>
-                    <Link href={`/post/${post.slug}`} className='hover:underline underline-offset-4'>
+                    <Link
+                      href={`/post/${post.slug}`}
+                      className='hover:underline underline-offset-4'
+                    >
                       {post.title}
                     </Link>
                   </TableCell>
@@ -83,7 +98,11 @@ export default async function PostsPage(props: { searchParams: Promise<{ page?: 
                   <TableCell className='text-center'>{post.numLikes}</TableCell>
                   <TableCell className='flex gap-1'>
                     <Button asChild size='sm'>
-                      <Link href={`/admin/posts/${post._id.toString()}?page=${currentPage}&limit=${limit}`}>수정</Link>
+                      <Link
+                        href={`/admin/posts/${post._id.toString()}?page=${currentPage}&limit=${limit}`}
+                      >
+                        수정
+                      </Link>
                     </Button>
                     <PostDelete postId={post._id.toString()} />
                   </TableCell>
@@ -99,7 +118,12 @@ export default async function PostsPage(props: { searchParams: Promise<{ page?: 
           </TableBody>
         </Table>
         <div className='mt-4'>
-          <PageIndex currentPage={currentPage} totalPages={totalPages} limit={limit} baseUrl='/admin/posts' />
+          <PageIndex
+            currentPage={currentPage}
+            totalPages={totalPages}
+            limit={limit}
+            baseUrl='/admin/posts'
+          />
         </div>
         <div className='absolute right-0 top-2'>
           <PageSelector currentLimit={limit} baseUrl='/admin/posts' currentPage={currentPage} />

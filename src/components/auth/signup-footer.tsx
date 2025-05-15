@@ -6,7 +6,7 @@ import FindPasswordDialog from './find-pw-dialog'
 
 export default function SignUpFooter() {
   return (
-    <div className='text-sm text-zinc-500 leading-5 text-center mt-6'>
+    <div className='text-sm text-zinc-500 leading-5 text-center mt-6 font-nanum'>
       계정을 만들면 <UserConditions /> 및 <UserPrivacy />
       에 동의하신 걸로 간주합니다! 😊 함께 멋진 여정을 시작해볼까요? 🚀 <br />
       <p className='mt-1'>

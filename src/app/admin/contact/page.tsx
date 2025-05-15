@@ -40,8 +40,7 @@ export default async function AdminContactPage(props: {
       <div className='relative'>
         <Table className='border-b text-sm'>
           <TableCaption className='caption-top text-zinc-800 text-xl font-nexon mb-4 mt-0'>
-            문의사항 목록{' '}
-            <span className='text-[10px] text-zinc-500'>{totalItems}</span>
+            문의사항 목록 <span className='text-[10px] text-zinc-500'>{totalItems}</span>
           </TableCaption>
           <TableHeader>
             <TableRow>
@@ -61,20 +60,13 @@ export default async function AdminContactPage(props: {
                     {(currentPage - 1) * perPage + idx + 1}
                   </TableCell>
                   <TableCell>
-                    <a
-                      href={`mailto:${c.email}`}
-                      className='underline underline-offset-4'
-                    >
+                    <a href={`mailto:${c.email}`} className='underline underline-offset-4'>
                       {c.email}
                     </a>
                   </TableCell>
                   <TableCell>{c.title}</TableCell>
-                  <TableCell className='whitespace-pre-wrap'>
-                    {c.message}
-                  </TableCell>
-                  <TableCell className='text-center'>
-                    {formatDateTime(c.createdAt)}
-                  </TableCell>
+                  <TableCell className='whitespace-pre-wrap'>{c.message}</TableCell>
+                  <TableCell className='text-center'>{formatDateTime(c.createdAt)}</TableCell>
                   <TableCell>
                     <ContactDelete contactId={c._id.toString()} />
                   </TableCell>
@@ -100,11 +92,7 @@ export default async function AdminContactPage(props: {
           />
         </div>
         <div className='absolute right-0 top-2'>
-          <PageSelector
-            currentLimit={perPage}
-            baseUrl='/admin/contact'
-            currentPage={currentPage}
-          />
+          <PageSelector currentLimit={perPage} baseUrl='/admin/contact' currentPage={currentPage} />
         </div>
       </div>
     </section>

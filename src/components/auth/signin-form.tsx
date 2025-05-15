@@ -16,10 +16,10 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
+import { isRedirectError } from 'next/dist/client/components/redirect-error'
 import { IUserSignIn } from '@/lib/types'
 import { UserSignInSchema } from '@/lib/validator'
 import { signInWithCredentials } from '@/lib/actions/user.actions'
-import { isRedirectError } from 'next/dist/client/components/redirect-error'
 
 const signInDefaultValues =
   process.env.NODE_ENV === 'development'
@@ -97,9 +97,7 @@ export default function SignInForm() {
                       type='button'
                       onClick={() => setShowPassword((v) => !v)}
                       className='eye'
-                      aria-label={
-                        showPassword ? 'Hide password' : 'Show password'
-                      }
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>

@@ -16,10 +16,8 @@ export const MenuItem = ({ title, href, children }: Props) => {
           href={href}
           className='font-nanum block select-none space-y-1 rounded-sm p-3 leading-none no-underline outline-none transition hover:bg-accent hover:text-accent-foreground'
         >
-          <div className='text-sm font-gmarket leading-none pt-1'>{title}</div>
-          <div className='text-sm leading-snug text-muted-foreground'>
-            {children}
-          </div>
+          <div className='text-[15px] font-gmarket font-medium leading-none pt-1'>{title}</div>
+          <div className='text-sm leading-snug text-muted-foreground'>{children}</div>
         </Link>
       </NavigationMenuLink>
     </li>

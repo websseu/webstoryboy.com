@@ -4,13 +4,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { checkEmailExists } from '@/lib/actions/user.actions'
@@ -37,7 +31,7 @@ export default function FindEmailForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+      <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 font-nanum'>
         <FormField
           control={form.control}
           name='email'
@@ -45,11 +39,7 @@ export default function FindEmailForm() {
             <FormItem>
               <FormControl>
                 <div className='flex gap-2 mt-4 mb-1'>
-                  <Input
-                    {...field}
-                    className='flex-1'
-                    placeholder='이메일을 입력하세요'
-                  />
+                  <Input {...field} className='flex-1' placeholder='이메일을 입력하세요' />
                   <Button
                     type='submit'
                     size='lg'

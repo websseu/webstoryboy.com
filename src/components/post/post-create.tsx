@@ -118,10 +118,7 @@ export default function PostCreate() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onValid, onInvalid)}
-        className='space-y-6'
-      >
+      <form onSubmit={form.handleSubmit(onValid, onInvalid)} className='space-y-6 font-nanum'>
         <div className='flex flex-col gap-5 md:flex-row'>
           <FormField
             control={form.control}
@@ -147,10 +144,7 @@ export default function PostCreate() {
                   <PostTooltip text='슬러그는 페이지 영문 주소를 나타냅니다. 빈칸이 있으면 안됩니다.' />
                 </FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder='영문 페이지 주소를 적어주세요!'
-                    {...field}
-                  />
+                  <Input placeholder='영문 페이지 주소를 적어주세요!' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -261,9 +255,7 @@ export default function PostCreate() {
                         // value={markdown}
                         {...field}
                         style={{ height: '500px' }}
-                        renderHTML={(text) => (
-                          <ReactMarkdown>{text}</ReactMarkdown>
-                        )}
+                        renderHTML={(text) => <ReactMarkdown>{text}</ReactMarkdown>}
                         onChange={({ text }) => form.setValue('contents', text)}
                       />
                     </FormControl>

@@ -40,16 +40,14 @@ export default function ContactPage() {
   }
 
   return (
-    <section className='max-w-3xl mx-auto'>
+    <section>
       <div className='page__title'>
-        <h2 className='text-center'>문의사항</h2>
-        <p className='text-zinc-500 mt-2 text-center text-sm mb-8'>
-          궁금한 사항이 있으시면 무엇이든지 물어보세요!
-        </p>
+        <h2>문의사항</h2>
+        <p>궁금한 사항이 있으시면 무엇이든지 물어보세요!</p>
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6'>
+        <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-6 font-nanum'>
           <div className='flex flex-col gap-5 md:flex-row'>
             <FormField
               control={form.control}

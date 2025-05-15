@@ -16,10 +16,10 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
+import { isRedirectError } from 'next/dist/client/components/redirect-error'
 import { IUserSignUp } from '@/lib/types'
 import { UserSignUpSchema } from '@/lib/validator'
 import { registerUser } from '@/lib/actions/user.actions'
-import { isRedirectError } from 'next/dist/client/components/redirect-error'
 
 const signUpDefaultValues =
   process.env.NODE_ENV === 'development'
@@ -116,9 +116,7 @@ export default function SignUpForm() {
                       type='button'
                       onClick={() => setShowPassword((v) => !v)}
                       className='eye'
-                      aria-label={
-                        showPassword ? 'Hide password' : 'Show password'
-                      }
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
@@ -147,15 +145,9 @@ export default function SignUpForm() {
                       type='button'
                       onClick={() => setShowConfirmPassword((v) => !v)}
                       className='eye'
-                      aria-label={
-                        showConfirmPassword ? 'Hide password' : 'Show password'
-                      }
+                      aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
                     >
-                      {showConfirmPassword ? (
-                        <EyeOff size={18} />
-                      ) : (
-                        <Eye size={18} />
-                      )}
+                      {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
                   </div>
                 </FormControl>

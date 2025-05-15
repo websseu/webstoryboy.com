@@ -17,9 +17,9 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import {
+  resetUserPassword,
   sendPasswordResetCode,
   verifyPasswordResetCode,
-  resetUserPassword,
 } from '@/lib/actions/user.actions'
 
 const EmailSchema = z.object({
@@ -40,11 +40,7 @@ const ResetSchema = z
     path: ['confirmPassword'],
   })
 
-export default function FindPasswordForm({
-  setOpen,
-}: {
-  setOpen?: (value: boolean) => void
-}) {
+export default function FindPasswordForm({ setOpen }: { setOpen?: (value: boolean) => void }) {
   const router = useRouter()
   const [step, setStep] = useState<'email' | 'code' | 'reset'>('email')
   const [email, setEmail] = useState('')
@@ -113,10 +109,7 @@ export default function FindPasswordForm({
                 <FormItem>
                   <FormLabel>이메일</FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder='가입한 이메일을 입력하세요'
-                      {...field}
-                    />
+                    <Input placeholder='가입한 이메일을 입력하세요' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

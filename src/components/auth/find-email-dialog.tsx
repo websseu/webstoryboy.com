@@ -21,12 +21,10 @@ export default function FindEmailDialog() {
           이메일 찾기
         </button>
       </DialogTrigger>
-      <DialogContent className='max-w-md'>
+      <DialogContent className='max-w-md font-nanum'>
         <DialogHeader>
           <DialogTitle className='font-bold text-lg'>이메일 찾기</DialogTitle>
-          <DialogDescription>
-            가입 시 사용한 이메일이 존재하는지 확인합니다.
-          </DialogDescription>
+          <DialogDescription>가입 시 사용한 이메일이 존재하는지 확인합니다.</DialogDescription>
         </DialogHeader>
         <FindEmailForm />
       </DialogContent>

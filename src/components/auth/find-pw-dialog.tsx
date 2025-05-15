@@ -21,7 +21,7 @@ export default function FindPasswordDialog() {
           비밀번호 찾기
         </button>
       </DialogTrigger>
-      <DialogContent className='max-w-md'>
+      <DialogContent className='max-w-md font-nanum'>
         <DialogHeader>
           <DialogTitle className='font-bold text-lg'>비밀번호 찾기</DialogTitle>
           <DialogDescription>

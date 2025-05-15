@@ -29,15 +29,16 @@ export type MenuSection = {
   items: MenuItemType[]
 }
 
+export type HtmlDocItem = {
+  slug: string
+  title: string
+}
+
 // 메뉴 데이터
 export type Data = {
   menuData: MenuSection[]
-}
-
-// 가상 데이터
-export type InputData = {
-  users: IUserInput[]
-  posts: IPostInput[]
+  HtmlDocs: HtmlDocItem[]
+  CssDocs: string[]
 }
 
 // 문의하기

@@ -1,22 +1,24 @@
-import type React from 'react'
 import type { Metadata } from 'next'
+import { Geist, Geist_Mono, Poppins } from 'next/font/google'
 import './globals.css'
-import { Poppins } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from '@/components/ui/sonner'
-import {
-  APP_DESCRIPTION,
-  APP_NAME,
-  APP_SLOGAN,
-  APP_SITE_URL,
-  APP_KEYWORDS,
-} from '@/lib/constants'
+import { APP_DESCRIPTION, APP_KEYWORDS, APP_NAME, APP_SITE_URL, APP_SLOGAN } from '@/lib/constants'
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
 
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
-  display: 'swap',
+  weight: ['500', '700', '900'],
 })
 
 export const metadata: Metadata = {
@@ -27,9 +29,15 @@ export const metadata: Metadata = {
   description: APP_DESCRIPTION,
   keywords: APP_KEYWORDS,
   metadataBase: new URL(APP_SITE_URL),
-  alternates: {
-    canonical: APP_SITE_URL,
+  alternates: { canonical: APP_SITE_URL },
+  icons: {
+    icon: [
+      { url: '/star.png', sizes: '16x16', type: 'image/png' },
+      { url: '/star.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/star.png',
   },
+
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
@@ -61,10 +69,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html lang='ko' suppressHydrationWarning>
-      <body className={`${poppins.variable}`}>
+      <body className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable}`}>
         <Toaster
           position='top-center'
           toastOptions={{

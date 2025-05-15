@@ -34,15 +34,15 @@ const notices = [
 
 export default function NoticePage() {
   return (
-    <section className='max-w-3xl mx-auto'>
+    <section>
       <div className='page__title'>
-        <h2 className='text-center'>공지사항</h2>
+        <h2>공지사항</h2>
         <p className='text-zinc-500 mt-2 text-sm text-center mb-8'>
           서비스 관련 중요한 안내 사항을 확인하세요.
         </p>
       </div>
 
-      <Accordion type='single' collapsible className='space-y-4'>
+      <Accordion type='single' collapsible className='space-y-4 font-nanum'>
         {notices.map((notice) => (
           <AccordionItem key={notice.id} value={notice.id}>
             <AccordionTrigger>{notice.title}</AccordionTrigger>

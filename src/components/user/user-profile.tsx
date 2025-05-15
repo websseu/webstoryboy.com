@@ -38,11 +38,9 @@ export default function UserProfile({ session }: UserProfileProps) {
           프로필
         </div>
       </DialogTrigger>
-      <DialogContent className='sm:max-w-[425px] pt-10 pb-9'>
+      <DialogContent className='sm:max-w-[425px] pt-10 pb-9 font-nanum'>
         <DialogHeader>
-          <DialogTitle className='text-center text-2xl'>
-            {user.name}
-          </DialogTitle>
+          <DialogTitle className='text-center text-2xl'>{user.name}</DialogTitle>
           <DialogDescription className='text-center'>
             안녕하세요!. 개발에 관심있는 1인입니다.
           </DialogDescription>

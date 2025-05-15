@@ -27,20 +27,18 @@ export default function MobileMenu() {
         </DropdownMenuTrigger>
 
         <DropdownMenuContent
-          className='w-56 mr-0 mt-1 bg-background block sm:hidden'
+          className='w-56 mr-0 mt-1 bg-background block sm:hidden font-nanum'
           align='start'
           forceMount
         >
-          <DropdownMenuLabel className='text-center'>
-            개발을 배우다!
-          </DropdownMenuLabel>
+          <DropdownMenuLabel className='text-center'>개발을 배우다!</DropdownMenuLabel>
           <DropdownMenuSeparator />
 
           <DropdownMenuGroup>
             {data.menuData.map((section) => (
               <DropdownMenuSub key={section.label}>
                 <DropdownMenuSubTrigger className='gap-2'>
-                  <BadgeCheck className='h-4 w-4' />
+                  <BadgeCheck className='h-4 w-4 text-zinc-500' />
                   {section.card.title}
                 </DropdownMenuSubTrigger>
                 <DropdownMenuPortal>

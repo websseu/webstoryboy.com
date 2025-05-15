@@ -44,7 +44,7 @@ export default function ContactDelete({ contactId }: ContactDeleteProps) {
         </Button>
       </AlertDialogTrigger>
 
-      <AlertDialogContent>
+      <AlertDialogContent className='font-nanum'>
         <AlertDialogHeader>
           <AlertDialogTitle>정말 이 문의를 삭제하시겠습니까?</AlertDialogTitle>
           <AlertDialogDescription>
