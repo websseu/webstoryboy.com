@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function FontStyle() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='font-style' />
+        <h2>font-style</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          font-style은 CSS에서 글꼴의 스타일을 기울이거나 스타일링할지 여부를 지정하는 속성입니다.
+          주로 이탤릭체(italic)나 오블리크체(oblique) 같은 기울어진 텍스트를 만들 때 사용합니다.
         </p>
       </div>
       {/* side */}

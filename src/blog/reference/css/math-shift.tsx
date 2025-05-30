@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function MathShift() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='math-shift' />
+        <h2>math-shift</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          math-shift는 CSS의 실험적 속성으로, MathML 수식 내에서 위첨자(superscript)의 위치를
+          조정하는 데 사용됩니다. 이 속성은 OpenType 폰트의 MATH 테이블을 활용하여 수식의 시각적
+          표현을 세밀하게 제어할 수 있도록 도와줍니다.
         </p>
       </div>
       {/* side */}

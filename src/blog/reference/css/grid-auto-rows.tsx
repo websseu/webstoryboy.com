@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function GridAutoRows() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='grid-auto-rows' />
+        <h2>grid-auto-rows</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          grid-auto-rows는 CSS Grid에서 자동으로 생성되는 행(row)의 높이를 설정하는 속성입니다.
+          grid-template-rows로 정의되지 않은 행이 자동으로 생길 때, 그 행의 기본 높이를 정하는
+          역할을 합니다.
         </p>
       </div>
       {/* side */}

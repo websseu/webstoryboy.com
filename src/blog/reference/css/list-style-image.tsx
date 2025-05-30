@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function ListStyleImage() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='list-style-image' />
+        <h2>list-style-image</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          list-style-image는 CSS에서 목록 항목(li)의 불릿(bullet)을 이미지로 바꾸는 속성입니다. 기본
+          원형(●)이나 숫자 대신, 원하는 이미지를 기호처럼 표시할 수 있습니다.
         </p>
       </div>
       {/* side */}

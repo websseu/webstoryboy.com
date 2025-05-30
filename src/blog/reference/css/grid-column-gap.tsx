@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function GridColumnGap() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='grid-column-gap' />
+        <h2>grid-column-gap</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          grid-column-gap은 CSS Grid에서 열(Column) 사이의 간격을 설정하는 속성이었습니다. 현재는
+          gap, column-gap으로 대체되었고, grid-column-gap은 구식(deprecated, 더 이상 권장되지
+          않음)입니다.
         </p>
       </div>
       {/* side */}

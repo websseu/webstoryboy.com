@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function InsetInlineStart() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='inset-inline-start' />
+        <h2>inset-inline-start</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          inset-inline-start는 CSS 논리 속성 중 하나로, 요소의 인라인 방향 시작 위치를 설정하는
+          속성입니다. 문서의 쓰기 방향(writing mode)에 따라 left 또는 right로 동작합니다.
         </p>
       </div>
       {/* side */}

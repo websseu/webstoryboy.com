@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function LineHeight() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='line-height' />
+        <h2>line-height</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          line-height는 CSS에서 텍스트 줄 간격(행간)을 조절하는 속성입니다. 각 줄의
+          기준선(Baseline)과 기준선 사이의 높이를 설정하여, 텍스트 블록의 세로 간격과 가독성에
+          영향을 줍니다.
         </p>
       </div>
       {/* side */}

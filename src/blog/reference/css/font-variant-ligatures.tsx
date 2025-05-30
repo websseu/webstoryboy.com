@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function FontVariantLigatures() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='font-variant-ligatures' />
+        <h2>font-variant-ligatures</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          font-variant-ligatures는 CSS에서 글자가 자연스럽게 연결되는 &apos;합자(Ligatures)&apos;
+          기능을 사용할지 제어하는 속성입니다.
         </p>
       </div>
       {/* side */}

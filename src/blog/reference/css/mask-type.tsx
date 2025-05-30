@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function MaskType() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='mask-type' />
+        <h2>mask-type</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          mask-type은 CSS 마스킹 속성 중 하나로, mask-image나 mask 속성에 적용되는 **마스크의 해석
+          방식(알파 vs 밝기)**을 지정합니다. 쉽게 말해, 마스크 이미지를 어떻게 해석해서 보이게
+          할지를 설정합니다.
         </p>
       </div>
       {/* side */}

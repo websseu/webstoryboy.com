@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function FontVariantEastAsian() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='font-variant-east-asian' />
+        <h2>font-variant-east-asian</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          font-variant-east-asian은 CSS에서 한중일(동아시아) 문자에 대한 타이포그래피 스타일을
+          제어하는 속성입니다. OpenType 폰트의 동아시아 글자 표현 방식을 정밀하게 조절할 수 있게
+          해줍니다.
         </p>
       </div>
       {/* side */}

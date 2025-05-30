@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function LetterSpacing() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='letter-spacing' />
+        <h2>letter-spacing</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          letter-spacing은 CSS 텍스트 속성 중 하나로, 글자 사이의 간격(자간)을 조절하는 데
+          사용됩니다. 디자인에서 글자가 너무 붙거나 벌어져 보일 때 이 속성을 사용해 가독성과
+          스타일을 조절할 수 있습니다.
         </p>
       </div>
       {/* side */}

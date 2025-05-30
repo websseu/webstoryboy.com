@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function OutlineWidth() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='outline-width' />
+        <h2>outline-width</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          outline-width는 CSS 시각 스타일 속성 중 하나로, 요소에 적용된 윤곽선(outline)의
+          굵기(두께)를 지정합니다. 윤곽선은 요소의 바깥쪽에 표시되는 선이며, outline-style,
+          outline-color와 함께 사용됩니다.
         </p>
       </div>
       {/* side */}

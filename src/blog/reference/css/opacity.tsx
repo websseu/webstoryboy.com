@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function Opacity() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='opacity' />
+        <h2>opacity</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          opacity는 CSS 시각 속성 중 하나로, 요소의 투명도(불투명도)를 설정하는 데 사용됩니다. 값이
+          0에 가까울수록 더 투명하고, 1에 가까울수록 불투명합니다.
         </p>
       </div>
       {/* side */}

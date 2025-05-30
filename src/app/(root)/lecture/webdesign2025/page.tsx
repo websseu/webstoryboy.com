@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Webdesign2025Page() {
-  const { posts, totalCount } = await getPostsForSubCategory('webdesign2025')
+  const { posts, totalCount } = await getPostsForSubCategory('web-design-2025')
 
   return (
     <section>

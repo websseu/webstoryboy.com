@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function MarginTop() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='margin-top' />
+        <h2>margin-top</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          margin-top은 CSS 박스 모델(Box Model) 속성 중 하나로, 요소의 위쪽 바깥 여백(외부 간격)을
+          설정하는 속성입니다. 즉, 요소의 위에 공간을 만들어 위에 있는 다른 요소와의 간격을 조정할
+          수 있습니다.
         </p>
       </div>
       {/* side */}

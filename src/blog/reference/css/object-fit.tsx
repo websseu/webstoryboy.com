@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function ObjectFit() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='object-fit' />
+        <h2>object-fit</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          object-fit은 CSS 속성으로, &lt;img&gt;, &lt;video&gt;, &lt;iframe&gt; 등
+          &quot;컨테이너보다 큰 미디어 요소&quot;의 크기 조정 방식을 지정합니다. 즉, 이미지나
+          동영상이 부모 박스 안에서 어떻게 맞춰질지를 결정하는 속성입니다.
         </p>
       </div>
       {/* side */}

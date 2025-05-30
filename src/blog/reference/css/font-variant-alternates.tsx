@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function FontVariantAlternates() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='font-variant-alternates' />
+        <h2>font-variant-alternates</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          font-variant-alternates는 CSS에서 OpenType 글꼴에 포함된 대체 글리프(alternate glyph)를
+          선택적으로 활성화할 수 있게 해주는 고급 타이포그래피 속성입니다.
         </p>
       </div>
       {/* side */}

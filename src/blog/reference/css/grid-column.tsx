@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function GridColumn() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='grid-column' />
+        <h2>grid-column</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          grid-column은 CSS Grid에서 그리드 아이템이 차지할 열의 시작 위치와 끝 위치(범위)를
+          지정하는 속성입니다. 쉽게 말해, 아이템이 몇 번째 열부터 시작해서 몇 번째 열까지 차지할지를
+          정하는 속성입니다.
         </p>
       </div>
       {/* side */}

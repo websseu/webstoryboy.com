@@ -1,16 +1,16 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function LineBreak() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='line-break' />
+        <h2>line-break</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          line-break는 CSS에서 줄바꿈 규칙을 설정할 때 사용하는 속성입니다. 특히 동아시아 문자(한글,
+          일본어, 중국어)를 포함한 텍스트의 줄바꿈 동작을 보다 정교하게 제어할 수 있도록
+          만들어졌습니다.
         </p>
       </div>
       {/* side */}

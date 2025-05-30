@@ -1,16 +1,15 @@
 import ReferBread from '@/components/refer/refer-bread'
 
-export default function MinHeight() {
+export default function InsetInlineEnd() {
   return (
     <>
       {/* cont */}
       <div className='cont'>
-        <ReferBread href1='reference' href2='css' title='min-height' />
-        <h2>min-height</h2>
+        <ReferBread href1='reference' href2='css' title='inset-inline-end' />
+        <h2>inset-inline-end</h2>
         <p>
-          min-height는 CSS 박스 모델(Box Model) 속성 중 하나로, 요소가 최소한으로 가져야 할 높이를
-          지정합니다. 즉, 콘텐츠가 아무리 작아도 요소의 높이가 지정된 값보다 작아지지 않도록
-          제한합니다.
+          inset-inline-end는 CSS 논리 속성(Logical Property) 중 하나로, **문서의 쓰기 방향(writing
+          mode)**에 따라 요소의 위치를 조정할 수 있게 해주는 속성입니다.
         </p>
       </div>
       {/* side */}
